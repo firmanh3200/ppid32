@@ -1,0 +1,422 @@
+/* Resetting some default styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  transition: background 0.5s ease, color 0.5s ease;
+  /* Smooth transition for theme changes */
+  min-height: 100vh;
+  /* Ensure the body takes up at least the full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles */
+header {
+  background-color: #616161;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background-color 0.5s ease;
+  /* Smooth transition for theme changes */
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.logo img {
+    max-width: 150px; /* Sesuaikan sesuai kebutuhan */
+}
+
+nav ul {
+  display: flex;
+  /* Responsive navigation using flexbox */
+  flex-wrap: wrap;
+  /* Allow items to wrap to the next line */
+  justify-content: flex-start;
+  /* Align items to the start of the container */
+}
+
+nav ul li {
+  margin-left: 20px;
+  margin-bottom: 5px;
+  /* Add some bottom margin for better spacing when wrapping */
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  /* Smooth transition for theme changes */
+}
+
+/* Dropdown styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 8px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Slider styles */
+.slider {
+  display: flex;
+  overflow-x: hidden;
+  /* Hide horizontal scrollbar */
+  width: 100%;
+  position: relative;
+  /* For absolute positioning of indicators */
+}
+
+.slide {
+  flex: 0 0 100%;
+  /* Ensure each slide takes full width */
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease-in-out;
+  /* Smooth transition for slider animation */
+}
+
+
+/* Card styles */
+.cards {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  flex-wrap: wrap; /* Allow cards to wrap */
+}
+
+.card {
+  width: 30%;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  /* Smooth transition for theme changes */
+  margin-bottom: 20px; /* Add spacing between cards */
+}
+
+.card a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  display: block;
+  transition: color 0.3s ease;
+  /* Smooth transition for theme changes */
+}
+
+.card i.fas.fa-book {
+  font-size: 10em; /* Sesuaikan ukuran ikon */
+  height: 100%; /* Membuat tinggi ikon 100% dari tinggi card */
+  line-height: 1; /* Penting untuk centering vertikal pada beberapa kasus */
+  margin-left: 5px; /* Jarak dari teks */
+  /* Tambahkan properti lain sesuai kebutuhan */
+}
+
+
+
+/* Footer styles */
+footer {
+  background-color: #616161;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  transition: background-color 0.5s ease;
+  /* Smooth transition for theme changes */
+  margin-top: auto;
+  /* Push the footer to the bottom */
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #333;
+  color: #f4f4f4;
+}
+
+body.dark-mode header {
+  background-color: #222;
+  color: #fff;
+}
+
+body.dark-mode .card {
+  background-color: #444;
+  color: #f4f4f4;
+}
+
+/* Dark mode text color adjustments */
+body.dark-mode,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p,
+body.dark-mode a {
+  color: #f4f4f4;
+  /* Set text color to white in dark mode */
+}
+
+/* Themed Styles */
+
+body.orange-theme {
+  background: linear-gradient(to right, #ffcc80, #ff8a80);
+  color: #444;
+}
+
+body.orange-theme header {
+  background-color: #ff7043;
+}
+
+body.orange-theme footer {
+  background-color: #ff7043;
+}
+
+body.red-theme {
+  background: linear-gradient(to right, #ffebee, #ef9a9a);
+}
+
+body.red-theme header {
+  background-color: #ef5350;
+}
+
+body.red-theme footer {
+  background-color: #ef5350;
+}
+
+body.green-theme {
+  background: linear-gradient(to right, #e8f5e9, #a5d6a7);
+}
+
+body.green-theme header {
+  background-color: #43a047;
+}
+
+body.green-theme footer {
+  background-color: #43a047;
+}
+
+body.blue-theme {
+  background: linear-gradient(to right, #e3f2fd, #90caf9);
+}
+
+body.blue-theme header {
+  background-color: #1e88e5;
+}
+
+body.blue-theme footer {
+  background-color: #1e88e5;
+}
+
+/* Floating settings icon and menu */
+.settings-container {
+  position: fixed;
+  top: 20px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.settings-button {
+  background-color: rgba(51, 51, 51, 0.8);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.settings-button:hover {
+  background-color: #555;
+}
+
+.settings-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  display: none;
+  flex-direction: column;
+  width: 50px;
+  /* Smaller width for icon-only display */
+}
+
+.settings-menu a,
+.settings-menu button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  font-size: 1.2em;
+  /* Adjust icon size as needed */
+}
+
+.settings-menu a:last-child,
+.settings-menu button:last-child {
+  border-bottom: none;
+}
+
+.settings-menu a:hover,
+.settings-menu button:hover {
+  background-color: #eee;
+}
+
+body.dark-mode .settings-menu {
+  background-color: #444;
+  border-color: #555;
+}
+
+body.dark-mode .settings-menu a,
+body.dark-mode .settings-menu button {
+  color: #f4f4f4;
+  border-bottom-color: #666;
+}
+
+/* Adjusting the menu items for icon display */
+.settings-menu a span,
+.settings-menu button span {
+  display: block;
+}
+
+/* Theme adjustments for silver/modern look */
+body.silver-theme {
+  background: linear-gradient(to right, #BDBDBD, #eee);
+  color: #444;
+  /* Darker text for better contrast */
+}
+
+body.silver-theme header,
+body.silver-theme footer {
+  background-color: #616161;
+  color: #fff;
+}
+
+body.silver-theme .card {
+  background-color: #f0f0f0;
+}
+
+body.silver-theme .card a {
+  color: #333;
+}
+
+/* Media Queries for Responsive Design */
+
+/* For smaller screens, adjust header and card layout */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  nav ul li {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+
+  .cards {
+    flex-direction: column;
+    /* Stack cards vertically */
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+    /* Make cards take up more width */
+    margin-bottom: 20px;
+  }
+}
+
+/* Even smaller screens */
+@media (max-width: 480px) {
+  .card {
+    width: 95%;
+    /* Take up almost full width */
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+}
+
+#signatureCanvas {
+	border: 1px solid #ccc;
+	cursor: crosshair;
+}
+
+#controls {
+	margin-top: 20px;
+}
