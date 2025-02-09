@@ -5,20 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PPID 32</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <header>
-    <div class="logo">
-		<div class="col-sm-4">
-			<img src="https://jabar.bps.go.id/_next/image?url=https%3A%2F%2Fweb-api.bps.go.id%2Fcover.php%3Ff%3DdIOqkJ%2BBU%2B4SBJZUjSytIVc5Yi9CMFMwZ2lVclMveG1mNDViZ0xtaTdHT3hreTlHY2RQK0lJTkFNU3F1bGI4M3FRMWtCTDFjcVV1ZEtuVWxnTkdUaTNTUTJkbGp4YktaK3dtelpnPT0%3D&w=1080&q=75" width="100%" height="auto">
+	<div class="row">
+		<div class="logo">
+			<img src="https://jabar.bps.go.id/_next/image?url=https%3A%2F%2Fweb-api.bps.go.id%2Fcover.php%3Ff%3DdIOqkJ%2BBU%2B4SBJZUjSytIVc5Yi9CMFMwZ2lVclMveG1mNDViZ0xtaTdHT3hreTlHY2RQK0lJTkFNU3F1bGI4M3FRMWtCTDFjcVV1ZEtuVWxnTkdUaTNTUTJkbGp4YktaK3dtelpnPT0%3D&w=1080&q=75" width="100%" height="auto" style="padding-right: 10px;">
 		</div>
-		<div class="col-sm-2">   </div>
-		<div class="col-sm-6">
+		<div class="logo">
 			PPID BPS Provinsi Jawa Barat
 		</div>
-    </div>
+	</div>
 	<div>
 		<nav>
 		  <ul>
@@ -49,7 +50,8 @@
 		</nav>
 	</div>
   </header>
-	
+  
+<main>	
   <div class="slider" id="imageSlider">
     <div class="slide" style="background-image: url('https://lh3.googleusercontent.com/p/AF1QipPlfqkg2IcqW7jB-c1hCs4rvGU0N2VzHzbV6hYy=s680-w680-h510');"></div>
     <div class="slide" style="background-image: url('https://lh3.googleusercontent.com/p/AF1QipMwA3TLLA377FsxyLA0VkywCdP3oF2mnrXMav-J=s680-w680-h510');"></div>
@@ -57,33 +59,148 @@
     <div class="slide" style="background-image: url('https://lh3.googleusercontent.com/p/AF1QipPtyCHaCaDlwZnwEPSBESB-0pk-QhNIFs3jNIYF=s680-w680-h510');"></div>
     <div class="slide" style="background-image: url('https://lh3.googleusercontent.com/p/AF1QipPJ875SETvLNflikWUZmJoLTHG-q7Eks8nX_GRA=s680-w680-h510');"></div>
   </div>
+  <div class="row">
+		<div class="btn btn-round btn-danger">
+			<a href="https://ppid.bps.go.id/app/konten/3200/Daftar-Informasi-Publik.html" target="_blank" style="text-decoration:none; color: white">
+				Daftar Informasi Publik
+			</a>
+		</div>
+		<div class="btn btn-round btn-outline-danger">
+		  <div class="accordion" id="formPiket">
+			<div class="accordion-item">
+			  <h4 class="accordion-header">
+				<button class="btn btn-round btn-outline-danger" type="button" data-bs-toggle="collapse" data-bs-target="#formpiket" aria-expanded="false" aria-controls="formpiket">
+				  <i class="bi-info-circle me-2"></i>
+				  Jadwal Petugas Piket
+				</button>
+			  </h4>
+			  <div id="formpiket" class="accordion-collapse collapse" data-bs-parent="#formPiket">
+				<div class="accordion-body">
+				  <div class="card text-center">
+					  <table class="table">
+						<thead class="thead th-dark">
+							<tr>
+								<td>Hari</td>
+								<td>08.00 - 12.00 WIB</td>
+								<td>13.00 - 16.00 / 16.30 WIB</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Senin</td>
+								<td>Firman Hadian</td>
+								<td>Ririen Ritmamella Wurisantani, S.E</td>
+							</tr>
+							<tr>
+								<td>Selasa</td>
+								<td>Pagin Nugraha, S.E</td>
+								<td>Yudhi Suhendra, S.ST., M.M</td>
+							</tr>
+							<tr>
+								<td>Rabu</td>
+								<td>Hartato, S.ST, M.E.K.K</td>
+								<td>Asri Yuniar, S.E., M.Stat</td>
+							</tr>
+							<tr>
+								<td>Kamis</td>
+								<td>Diani PraƟwi, S.M</td>
+								<td>Fahmi Ali Hasymi Juliansyah, S.Si, M.Sc., M.T</td>
+							</tr>
+							<tr>
+								<td>Jumat</td>
+								<td>Hani Annisa Nauli Harahap, S.ST</td>
+								<td>Anik Triani, S.ST</td>
+							</tr>
+						</tbody>
+					  </table>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
 
-  <section class="cards">
-    <div class="card">
-      <a href="https://forms.gle/DRHNoEW5kqMubYRG7" target="_blank">Form Permintaan Informasi Publik</a>
-	  <br>
-	  <i class="fa fa-address-book" style="font-size:150px"></i>
-    </div>
-    <div class="card">
-      <a href="https://docs.google.com/document/d/11ihbEShr66yYJzwiJ5WcOmaEUUgkJ-o_RNY2R2hYGXc/edit?usp=sharing" target="_blank">Form Keberatan Atas Informasi</a>
-      <br>
-	  <i class="fas fa-book"></i>
-    </div>
-    <div class="card">
-      <a>Silakan Membubuhkan Tanda Tangan</a>
-	  <canvas id="signatureCanvas" width="350px" height="auto"></canvas>
-	  <div id="controls" class="mt-3">
-            <button id="clearBtn" class="btn btn-outline-warning">Ulangi Tanda Tangan</button>
-            <button id="copyBtn" class="btn btn-success">Salin ke Dokumen</button>
-            <p id="message" class="mt-2"></p>
-        </div>
-    </div>
-  </section>
+  </div>
+<br><br>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+			  <div class="accordion" id="formpermintaanAccordion">
+				<div class="accordion-item">
+				  <h4 class="accordion-header">
+					<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#formpermintaan" aria-expanded="false" aria-controls="formpermintaan">
+					  <i class="bi-info-circle me-2"></i>
+					  Form Permintaan Informasi Publik
+					</button>
+				  </h4>
+				  <div id="formpermintaan" class="accordion-collapse collapse" data-bs-parent="#formpermintaanAccordion">
+					<div class="accordion-body">
+					  <div class="card text-center">
+						<a href="https://forms.gle/DRHNoEW5kqMubYRG7" target="_blank">
+						  <i class="fa fa-address-book" style="font-size:100px"></i>
+						</a>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
 
+			<div class="col-md-4">
+			  <div class="accordion" id="formkeberatanAccordion">
+				<div class="accordion-item">
+				  <h4 class="accordion-header">
+					<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#formkeberatan" aria-expanded="false" aria-controls="formkeberatan">
+					  <i class="bi-info-circle me-2"></i>
+					  Form Keberatan Atas Informasi
+					</button>
+				  </h4>
+				  <div id="formkeberatan" class="accordion-collapse collapse" data-bs-parent="#formkeberatanAccordion">
+					<div class="accordion-body">
+					  <div class="card text-center">
+						<a href="https://docs.google.com/document/d/11ihbEShr66yYJzwiJ5WcOmaEUUgkJ-o_RNY2R2hYGXc/edit?usp=sharing" target="_blank">
+						  <i class="fas fa-book" style="font-size:100px"></i>
+						</a>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+
+			<div class="col-md-4">
+			  <div class="accordion" id="formtteAccordion">
+				<div class="accordion-item">
+				  <h4 class="accordion-header">
+					<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#formtte" aria-expanded="false" aria-controls="formtte">
+					  <i class="bi-info-circle me-2"></i>
+					  Form Tanda Tangan
+					</button>
+				  </h4>
+				  <div id="formtte" class="accordion-collapse collapse" data-bs-parent="#formtteAccordion">
+					<div class="accordion-body">
+					  <div class="card">
+						<canvas id="signatureCanvas" width="350px" height="150px" style="border: 1px solid black;"></canvas>
+						<div id="controls" class="mt-3">
+						  <button id="clearBtn" class="btn btn-outline-warning btn-sm">Ulangi Tanda Tangan</button>
+						  <button id="copyBtn" class="btn btn-success btn-sm">Salin ke Dokumen</button>
+						  <p id="message" class="mt-2"></p>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  
+		</div>
+	</div>
+</main>
+<br><br>
   <footer>
 	<div class="footer" style="display: flex; align-items: center;">
-		<div class="col-sm-4">
-			<img src="https://jabar.bps.go.id/_next/image?url=%2Fassets%2Flogo-bps.png&w=1080&q=75" width="75" height="auto">
+		<div class="row">
+			<img src="https://jabar.bps.go.id/_next/image?url=%2Fassets%2Flogo-bps.png&w=1080&q=75" width="35px" height="35px">
 		</div>
 		<div class="col-sm-2"></div>
 		<div class="col-sm-6">
@@ -105,7 +222,7 @@
       <button class="theme-button" data-theme="blue"><span>🔵</span></button>
     </div>
   </div>
-
+	<script src="https://unpkg.com/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 
