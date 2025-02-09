@@ -17,7 +17,7 @@ body {
   color: #333;
   transition: background 0.5s ease, color 0.5s ease;
   /* Smooth transition for theme changes */
-  min-height: 100vh;
+  min-height: 90vh;
   /* Ensure the body takes up at least the full viewport height */
   display: flex;
   flex-direction: column;
@@ -114,7 +114,7 @@ nav ul li a {
 .slide {
   flex: 0 0 100%;
   /* Ensure each slide takes full width */
-  height: 300px;
+  height: 375px;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -137,7 +137,7 @@ nav ul li a {
 }
 
 .card {
-  width: 30%;
+  width: 100%;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -389,7 +389,7 @@ body.silver-theme .card a {
   }
 
   .card {
-    width: 80%;
+    width: 100%;
     /* Make cards take up more width */
     margin-bottom: 20px;
   }
