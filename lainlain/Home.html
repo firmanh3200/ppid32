@@ -174,7 +174,13 @@
 
         @media (min-width: 992px) {
             .stats-grid {
-                grid-template-columns: 1fr 2fr;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) { /* Atau ukuran layar yang sesuai */
+            .grid-layout {
+                grid-template-columns: repeat(4, 1fr); /* 4 kolom dengan lebar yang sama */
             }
         }
         
@@ -343,7 +349,7 @@
     <header class="header">
         <div class="logo">
             <div class="logo-icon">
-                <img src="logo3200.png"><img/>    
+                <img src="logo3200.png"><img/>
             </div> <!-- Simple chart icon as logo -->
         </div>
     </header>
@@ -422,7 +428,7 @@
         <section class="section">
             <div class="container">
                 <h2 class="section-title">Kondisi Industri Manufaktur di Jawa Barat (2020-2022)</h2>
-                <div class="grid-layout" style="margin-bottom: 40px;">
+                <div class="stats-grid" style="margin-bottom: 40px;">
                     <div class="stat-card">
                         <h3>Biaya Input & Nilai Output (Triliun Rupiah)</h3>
                         <div class="bar-chart-container">
@@ -444,7 +450,10 @@
                         </div>
                     </div>
                 </div>
-
+            </div>
+        </div>        
+        <section class="section">
+            <div class="container">
                 <h3>Pengeluaran untuk Pekerja Menurut Kategori Industri (Milyar Rupiah)</h3>
                 <p>Tabel berikut menampilkan data pengeluaran untuk pekerja di berbagai sektor industri manufaktur. Pada layar kecil, tabel ini dapat digulir ke samping.</p>
                 <div class="table-container" style="margin-top: 20px;">
