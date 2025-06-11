@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survei Industri Manufaktur Tahunan - BPS Provinsi Jawa Barat</title>
+    <style>
+        /* --- General Styling & Font Import --- */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        :root {
+            --primary-blue: #002D5B;
+            --secondary-green: #8BC34A;
+            --accent-orange: #E9573F;
+            --light-bg: #FFFBEA;
+            --text-dark: #333333;
+            --text-light: #ffffff;
+            --border-color: #e0e0e0;
+            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: #f9f9f9;
+        }
+
+        /* --- Container --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Header --- */
+        .header {
+            background-color: var(--text-light);
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-green);
+        }
+
+        .logo-text {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background-color: var(--light-bg);
+            text-align: center;
+            padding: 80px 20px;
+            border-bottom: 5px solid var(--secondary-green);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* --- Section Styling --- */
+        .section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-green);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- Grid Layout for Cards --- */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--text-light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            border-left: 5px solid var(--primary-blue);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .card li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .card li::before {
+            content: '✓';
+            color: var(--secondary-green);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .alert-card {
+             border-left: 5px solid var(--accent-orange);
+        }
+        
+        .alert-card h3 {
+            color: var(--accent-orange);
+        }
+
+        /* --- Stats and Charts Section --- */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 992px) {
+            .stats-grid {
+                grid-template-columns: 1fr 2fr;
+            }
+        }
+        
+        .stat-card {
+            background-color: var(--text-light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+        }
+
+        .stat-card.highlight {
+            background: linear-gradient(135deg, var(--primary-blue), #004a8c);
+            color: var(--text-light);
+        }
+
+        .stat-card .stat-number {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--secondary-green);
+            margin-bottom: 10px;
+        }
+
+        .highlight .stat-number {
+            color: var(--text-light);
+        }
+        
+        .stat-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .highlight h3 {
+            color: var(--text-light);
+        }
+
+        .bar-chart-container {
+            margin-top: 20px;
+        }
+
+        .bar-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .bar-label {
+            width: 80px;
+            font-weight: 600;
+        }
+
+        .bar {
+            flex-grow: 1;
+            height: 25px;
+            background-color: var(--secondary-green);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .bar.input {
+            background-color: #ffc107;
+        }
+        .bar.output {
+            background-color: #28a745;
+        }
+
+        /* --- Responsive Table --- */
+        .table-container {
+            overflow-x: auto; /* This is the key for responsiveness on small screens */
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .responsive-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px; /* Force scroll on smaller screens */
+        }
+
+        .responsive-table th,
+        .responsive-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .responsive-table thead th {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .responsive-table tbody tr:nth-of-type(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .responsive-table tbody tr:hover {
+            background-color: var(--light-bg);
+        }
+        
+        .responsive-table td:nth-child(2),
+        .responsive-table td:nth-child(3),
+        .responsive-table td:nth-child(4) {
+            text-align: right;
+            font-family: monospace, sans-serif;
+            font-size: 1rem;
+        }
+
+        .responsive-table tfoot td {
+            font-weight: 700;
+            color: var(--primary-blue);
+            background-color: #e9ecef;
+        }
+        
+        .responsive-table tfoot td:nth-child(n+2) {
+             text-align: right;
+        }
+        
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer .contact-info {
+            max-width: 600px;
+            margin: 0 auto 20px auto;
+        }
+        
+        .footer h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--secondary-green);
+        }
+
+        .footer a {
+            color: var(--text-light);
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer .copyright {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">&#x1f4ca;</div> <!-- Simple chart icon as logo -->
+            <div class="logo-text">
+                BADAN PUSAT STATISTIK<br>
+                PROVINSI JAWA BARAT
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>SURVEI INDUSTRI MANUFAKTUR TAHUNAN</h1>
+            <p>Menghasilkan statistik industri manufaktur skala menengah dan besar untuk mendukung pembangunan ekonomi yang berbasis data.</p>
+        </section>
+        
+        <div class="container section">
+            <h2 class="section-title">Informasi Survei</h2>
+            <div class="grid-layout">
+                <div class="card">
+                    <h3>Informasi Umum</h3>
+                    <p>Survei ini bertujuan menghasilkan statistik industri manufaktur skala menengah dan besar, mencakup data jumlah perusahaan, bahan baku, produksi, tenaga kerja, dan karakteristik lainnya.</p>
+                    <p>Terdiri dari <strong>Survei Tahunan Perusahaan Industri Manufaktur (STPIM)</strong> dan <strong>Survei Komoditas Perusahaan Industri Manufaktur (SKIM)</strong>.</p>
+                </div>
+                <div class="card">
+                    <h3>Cakupan Survei</h3>
+                    <p><strong>STPIM:</strong> Mencakup perusahaan industri skala menengah dan besar di seluruh Indonesia. Target sampel di Jawa Barat adalah <strong>2.618 perusahaan</strong>.</p>
+                    <p><strong>SKIM:</strong> Fokus pada industri pengolahan ikan (KBLI 102) dan industri alas kaki (KBLI 152). Target sampel di Jawa Barat adalah <strong>198 perusahaan</strong>.</p>
+                </div>
+                <div class="card">
+                    <h3>Moda Pencacahan</h3>
+                    <ul>
+                        <li><strong>CAPI (Computer Assisted Personal Interviewing):</strong> Pengumpulan data melalui wawancara langsung/tidak langsung dengan kuesioner cetak atau soft-file.</li>
+                        <li><strong>CAWI (Computer Assisted Web Interviewing):</strong> Pendataan mandiri oleh perusahaan melalui website khusus yang disediakan.</li>
+                    </ul>
+                </div>
+                <div class="card alert-card">
+                    <h3>Informasi Tambahan</h3>
+                    <p>Periode survei: <strong>14 April - 30 Juli 2025</strong>.</p>
+                    <p>Kegiatan ini adalah wujud nyata menuju <strong>SATU DATA INDONESIA</strong>.</p>
+                    <p><strong>PENTING:</strong> Data yang dikumpulkan tidak terkait dengan pajak. Kerahasiaan data dijamin oleh <strong>UU No. 16 Tahun 1997 tentang Statistik</strong>.</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="section" style="background-color: #ffffff;">
+            <div class="container">
+                <h2 class="section-title">Kontribusi & Pertumbuhan Ekonomi</h2>
+                <div class="stats-grid">
+                    <div class="stat-card highlight">
+                        <h3>Kontribusi PDRB Manufaktur 2024</h3>
+                        <div class="stat-number">41,39%</div>
+                        <p>Hampir setengah dari PDRB Jawa Barat tahun 2024 berasal dari sektor industri manufaktur, menjadikannya kontributor tertinggi.</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Pertumbuhan PDRB Industri Manufaktur (y-on-y)</h3>
+                        <p>Pertumbuhan ekonomi riil industri manufaktur di Jawa Barat selama kurun waktu setahun.</p>
+                        <div class="bar-chart-container">
+                            <div class="bar-item">
+                                <div class="bar-label">2021</div>
+                                <div class="bar" style="width: 100%;"><span style="padding-right: 10px; color: #fff;">7,00%</span></div>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-label">2022</div>
+                                <div class="bar" style="width: 60%;"><span style="padding-right: 10px; color: #fff;">4,22%</span></div>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-label">2023</div>
+                                <div class="bar" style="width: 68%;"><span style="padding-right: 10px; color: #fff;">4,74%</span></div>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-label">2024</div>
+                                <div class="bar" style="width: 50%;"><span style="padding-right: 10px; color: #fff;">3,52%</span></div>
+                            </div>
+                        </div>
+                        <small>Sumber: PDRB Jawa Barat Menurut Lapangan Usaha, 2020-2024</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Kondisi Industri Manufaktur di Jawa Barat (2020-2022)</h2>
+                <div class="grid-layout" style="margin-bottom: 40px;">
+                    <div class="stat-card">
+                        <h3>Biaya Input & Nilai Output (Triliun Rupiah)</h3>
+                        <div class="bar-chart-container">
+                             <div class="bar-item"><div class="bar-label">2020</div><div class="bar output" style="width:100%">2.095</div></div>
+                             <div class="bar-item"><div class="bar-label"></div><div class="bar input" style="width:55.9%">1.171</div></div>
+                             <div class="bar-item"><div class="bar-label">2021</div><div class="bar output" style="width:92.6%">1.941</div></div>
+                             <div class="bar-item"><div class="bar-label"></div><div class="bar input" style="width:49.5%">1.038</div></div>
+                             <div class="bar-item"><div class="bar-label">2022</div><div class="bar output" style="width:95.9%">2.010</div></div>
+                             <div class="bar-item"><div class="bar-label"></div><div class="bar input" style="width:50%">1.049</div></div>
+                        </div>
+                        <p style="margin-top: 20px;"><span style="display:inline-block; width:12px; height:12px; background:#28a745; border-radius:3px; margin-right:5px;"></span> Nilai Output <span style="display:inline-block; width:12px; height:12px; background:#ffc107; border-radius:3px; margin-right:5px; margin-left:15px;"></span> Biaya Input</p>
+                    </div>
+                     <div class="stat-card">
+                        <h3>Jumlah Tenaga Kerja (Ribu Orang)</h3>
+                        <div class="bar-chart-container">
+                             <div class="bar-item"><div class="bar-label">2020</div><div class="bar" style="width:100%">1.923</div></div>
+                             <div class="bar-item"><div class="bar-label">2021</div><div class="bar" style="width:96%">1.848</div></div>
+                             <div class="bar-item"><div class="bar-label">2022</div><div class="bar" style="width:98.5%">1.894</div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Pengeluaran untuk Pekerja Menurut Kategori Industri (Milyar Rupiah)</h3>
+                <p>Tabel berikut menampilkan data pengeluaran untuk pekerja di berbagai sektor industri manufaktur. Pada layar kecil, tabel ini dapat digulir ke samping.</p>
+                <div class="table-container" style="margin-top: 20px;">
+                    <table class="responsive-table">
+                        <thead>
+                            <tr>
+                                <th>Kategori Industri</th>
+                                <th>2020</th>
+                                <th>2021</th>
+                                <th>2022</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Industri Makanan</td><td>6.980</td><td>8.347</td><td>7.912</td></tr>
+                            <tr><td>Industri Minuman</td><td>1.345</td><td>1.790</td><td>1.997</td></tr>
+                            <tr><td>Industri Pengolahan Tembakau</td><td>61</td><td>472</td><td>533</td></tr>
+                            <tr><td>Industri Tekstil</td><td>12.459</td><td>9.364</td><td>11.517</td></tr>
+                            <tr><td>Industri Pakaian Jadi</td><td>11.713</td><td>11.881</td><td>13.779</td></tr>
+                            <tr><td>Industri Kulit, Barang dari Kulit dan Alas Kaki</td><td>7.782</td><td>8.468</td><td>9.394</td></tr>
+                            <tr><td>Industri Kayu, Barang dari Kayu dan Gabus</td><td>720</td><td>844</td><td>680</td></tr>
+                            <tr><td>Industri Kertas dan Barang dari Kertas</td><td>2.306</td><td>2.298</td><td>3.000</td></tr>
+                            <tr><td>Industri Pencetakan dan Reproduksi Media Rekaman</td><td>1.086</td><td>1.263</td><td>1.426</td></tr>
+                            <tr><td>Industri Produk dari Batu Bara dan Pengilangan Minyak Bumi</td><td>523</td><td>493</td><td>680</td></tr>
+                            <tr><td>Industri Bahan Kimia dan Barang dari Bahan Kimia</td><td>5.064</td><td>6.303</td><td>5.280</td></tr>
+                            <tr><td>Industri Farmasi, Produk Obat Kimia dan Obat Tradisional</td><td>2.637</td><td>3.104</td><td>2.477</td></tr>
+                            <tr><td>Industri Karet, Barang dari Karet dan Plastik</td><td>6.033</td><td>7.710</td><td>6.747</td></tr>
+                            <tr><td>Industri Barang Galian Bukan Logam</td><td>3.398</td><td>4.121</td><td>3.278</td></tr>
+                            <tr><td>Industri Logam Dasar</td><td>1.686</td><td>2.911</td><td>2.062</td></tr>
+                            <tr><td>Industri Barang Logam, Bukan Mesin dan Peralatannya</td><td>4.284</td><td>4.521</td><td>5.023</td></tr>
+                            <tr><td>Industri Komputer, Barang Elektronik dan Optik</td><td>4.083</td><td>3.618</td><td>5.013</td></tr>
+                            <tr><td>Industri Peralatan Listrik</td><td>4.061</td><td>4.331</td><td>5.419</td></tr>
+                            <tr><td>Industri Mesin dan Perlengkapan ytdl</td><td>2.860</td><td>3.739</td><td>3.504</td></tr>
+                            <tr><td>Industri Kendaraan Bermotor, Trailer dan Semi Trailer</td><td>12.069</td><td>13.233</td><td>13.795</td></tr>
+                            <tr><td>Industri Alat Angkutan Lainnya</td><td>3.364</td><td>3.070</td><td>4.168</td></tr>
+                            <tr><td>Industri Furnitur</td><td>1.169</td><td>1.463</td><td>1.164</td></tr>
+                            <tr><td>Industri Pengolahan Lainnya</td><td>4.102</td><td>4.368</td><td>4.198</td></tr>
+                            <tr><td>Jasa Reparasi dan Pemasangan Mesin dan Peralatan</td><td>207</td><td>817</td><td>277</td></tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>Total</td>
+                                <td>99.994</td>
+                                <td>108.529</td>
+                                <td>113.324</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <small style="display: block; text-align: right; margin-top: 10px;">Sumber: Statistik Industri Manufaktur Jawa Barat, 2020-2022</small>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="contact-info">
+            <h4>TIM INDUSTRI PENGOLAHAN, PERTAMBANGAN, ENERGI DAN KONSTRUKSI</h4>
+            <p>BPS PROVINSI JAWA BARAT</p>
+            <p>Jl. PHH. Mustofa No. 43 Bandung 40124</p>
+            <p>Telp: (022) 7272595</p>
+            <p>Homepage: <a href="https://jabar.bps.go.id" target="_blank">https://jabar.bps.go.id</a></p>
+            <p>E-mail: <a href="mailto:bps3200@bps.go.id">bps3200@bps.go.id</a></p>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Badan Pusat Statistik. Semua data bersifat publik dan diadaptasi dari materi informasi.
+        </div>
+    </footer>
+
+</body>
+</html>
