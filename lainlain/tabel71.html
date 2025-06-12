@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel 7.1 Biaya Input menurut Kode Industri, 2022</title>
+
+    <!-- CSS untuk Bootstrap 5 dan Ekstensi DataTables -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/2.0.8/css/dataTables.bootstrap5.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/buttons/3.0.2/css/buttons.bootstrap5.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/responsive/3.0.2/css/responsive.bootstrap5.css" rel="stylesheet">
+
+    <style>
+        /* CSS Kustom untuk Tampilan yang Lebih Baik */
+        body {
+            background-color: #f0f2f5;
+            font-size: 0.9rem;
+        }
+        .container-fluid {
+            background-color: #ffffff;
+            padding: 2rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        h1 {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+        h2 {
+            font-size: 1.2rem;
+            color: #6c757d;
+            margin-bottom: 1rem;
+        }
+        table.dataTable th {
+            white-space: nowrap;
+        }
+        .text-end {
+            text-align: right !important;
+        }
+        tfoot {
+            font-weight: bold;
+        }
+        .dataTables_wrapper .row:last-child {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <h1>Tabel 7.1 Biaya Input menurut Kode Industri, 2022</h1>
+        <h2><i>Table 7.1 Input Cost by Industrial Code, 2022</i></h2>
+        <p class="text-center text-muted">Nilai dalam Ribuan Rupiah (<i>Value in Thousand Rupiah</i>)</p>
+
+        <table id="inputCostTable" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Kode Industri</th>
+                    <th>Skala Industri</th>
+                    <th>Bahan Baku dan Penolong</th>
+                    <th>Bahan Bakar, Tenaga Listrik dan Gas</th>
+                    <th>Sewa Gedung, Mesin dan Alat-alat</th>
+                    <th>Jasa yang Diberikan Pihak Lain</th>
+                    <th>Biaya representasi dan royalti</th>
+                    <th>Pengeluaran Lainnya</th>
+                    <th>Jumlah</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- DATA DIBAWAH INI TELAH DIBERSIHKAN: Titik ribuan dihilangkan, '–' dan sel kosong diganti dengan 0 -->
+                <tr><td>10</td><td>IBS</td><td>78948552059</td><td>1938777069</td><td>610818511</td><td>91266954</td><td>736544779</td><td>10963630984</td><td>93289590356</td></tr>
+                <tr><td>10</td><td>IB</td><td>62166350932</td><td>1605763906</td><td>526647996</td><td>80013373</td><td>595850509</td><td>10176080223</td><td>75150706939</td></tr>
+                <tr><td>11</td><td>IBS</td><td>8149823772</td><td>550833864</td><td>50069929</td><td>77437983</td><td>660296270</td><td>1856586515</td><td>11345048333</td></tr>
+                <tr><td>11</td><td>IB</td><td>5904013852</td><td>495882235</td><td>44816026</td><td>76173722</td><td>576432539</td><td>1699049728</td><td>8796368102</td></tr>
+                <tr><td>12</td><td>IBS</td><td>104794519</td><td>246280007</td><td>377400</td><td>2408007</td><td>2420139</td><td>10268315</td><td>366548387</td></tr>
+                <tr><td>12</td><td>IB</td><td>76440477</td><td>245791604</td><td>80000</td><td>0</td><td>1228060</td><td>3734964</td><td>327275105</td></tr>
+                <tr><td>13</td><td>IBS</td><td>86311247469</td><td>7197789804</td><td>223493420</td><td>1781572730</td><td>1189878554</td><td>9085318545</td><td>105789300522</td></tr>
+                <tr><td>13</td><td>IB</td><td>79296995820</td><td>6982283859</td><td>173084884</td><td>1613608152</td><td>1171439176</td><td>8390799575</td><td>97628211466</td></tr>
+                <tr><td>14</td><td>IBS</td><td>55975061229</td><td>2922018342</td><td>368574112</td><td>2025710416</td><td>292155048</td><td>5617303134</td><td>67200822281</td></tr>
+                <tr><td>14</td><td>IB</td><td>53042344023</td><td>2869024835</td><td>353442641</td><td>1974230462</td><td>276890718</td><td>5243865896</td><td>63759798575</td></tr>
+                <tr><td>15</td><td>IBS</td><td>41594116042</td><td>369878237</td><td>38331213</td><td>300765869</td><td>90529842</td><td>1184368703</td><td>43577989906</td></tr>
+                <tr><td>15</td><td>IB</td><td>40857836969</td><td>349746467</td><td>34240748</td><td>297087396</td><td>85798398</td><td>1153324142</td><td>42778034120</td></tr>
+                <tr><td>16</td><td>IBS</td><td>3541014227</td><td>90426777</td><td>74733676</td><td>70646577</td><td>89372584</td><td>291271816</td><td>4157465657</td></tr>
+                <tr><td>16</td><td>IB</td><td>2282575219</td><td>55574135</td><td>35984299</td><td>34841555</td><td>51762524</td><td>152438420</td><td>2613176152</td></tr>
+                <tr><td>17</td><td>IBS</td><td>33073341168</td><td>2517033944</td><td>185058869</td><td>3338611388</td><td>241464743</td><td>3203294373</td><td>42558804485</td></tr>
+                <tr><td>17</td><td>IB</td><td>30272234178</td><td>2389409330</td><td>175847503</td><td>3333528113</td><td>223491748</td><td>3009341139</td><td>39403852011</td></tr>
+                <tr><td>18</td><td>IBS</td><td>3856172268</td><td>204635648</td><td>47483328</td><td>34383949</td><td>15124981</td><td>579281880</td><td>4737082054</td></tr>
+                <tr><td>18</td><td>IB</td><td>2693354774</td><td>99715507</td><td>37387271</td><td>1652902</td><td>11605869</td><td>469220441</td><td>3312936764</td></tr>
+                <tr><td>19</td><td>IBS</td><td>26624477120</td><td>84778459</td><td>17959120</td><td>10</td><td>4385465</td><td>1035043898</td><td>27766644072</td></tr>
+                <tr><td>19</td><td>IB</td><td>22191121127</td><td>48644460</td><td>16754113</td><td>0</td><td>1311635</td><td>980162060</td><td>23237993395</td></tr>
+                <tr><td>20</td><td>IBS</td><td>76200523051</td><td>3156863592</td><td>2014624669</td><td>369703399</td><td>570705079</td><td>9031954144</td><td>91344373934</td></tr>
+                <tr><td>20</td><td>IB</td><td>55164636579</td><td>1847030938</td><td>379417314</td><td>336547184</td><td>376994557</td><td>7216974583</td><td>65321601155</td></tr>
+                <tr><td>21</td><td>IBS</td><td>25304801219</td><td>587710553</td><td>59073312</td><td>120598515</td><td>1183276807</td><td>3441609055</td><td>30697069461</td></tr>
+
+                <tr><td>21</td><td>IB</td><td>18776711996</td><td>488526603</td><td>53264857</td><td>88014238</td><td>735909291</td><td>1766650139</td><td>21909077124</td></tr>
+                <tr><td>22</td><td>IBS</td><td>43039965403</td><td>2751649455</td><td>444607103</td><td>98003855</td><td>697680121</td><td>3716192421</td><td>50748098358</td></tr>
+
+                <tr><td>22</td><td>IB</td><td>31208222537</td><td>1856360904</td><td>110669063</td><td>78859231</td><td>551341205</td><td>3035860772</td><td>36841313712</td></tr>
+                <tr><td>23</td><td>IBS</td><td>14141617517</td><td>7770284145</td><td>148515580</td><td>160138898</td><td>260432123</td><td>4339273677</td><td>26820261940</td></tr>
+
+                <tr><td>23</td><td>IB</td><td>10086088092</td><td>7109536489</td><td>127929427</td><td>153510809</td><td>171472566</td><td>2650424212</td><td>20298961595</td></tr>
+                <tr><td>24</td><td>IBS</td><td>40623060208</td><td>651898138</td><td>110229656</td><td>81428094</td><td>43560006</td><td>2173169831</td><td>43683345933</td></tr>
+
+                <tr><td>24</td><td>IB</td><td>36782957718</td><td>574708033</td><td>104751574</td><td>80971710</td><td>41551424</td><td>1882621647</td><td>39467562106</td></tr>
+                <tr><td>25</td><td>IBS</td><td>46272492105</td><td>1046761147</td><td>205079757</td><td>194729256</td><td>163778135</td><td>3807607730</td><td>51690448130</td></tr>
+
+                <tr><td>25</td><td>IB</td><td>35962251954</td><td>751565901</td><td>121283320</td><td>63168429</td><td>78544003</td><td>2580259464</td><td>39557073071</td></tr>
+                <tr><td>26</td><td>IBS</td><td>31850960913</td><td>1266425440</td><td>75421822</td><td>227435483</td><td>399368614</td><td>1518427696</td><td>35338039968</td></tr>
+
+                <tr><td>26</td><td>IB</td><td>31320479640</td><td>1206704590</td><td>67625545</td><td>217648012</td><td>374111274</td><td>1332112224</td><td>34518681285</td></tr>
+                <tr><td>27</td><td>IBS</td><td>94814474612</td><td>1090189052</td><td>432330284</td><td>289889199</td><td>531968451</td><td>8047814631</td><td>105206666229</td></tr>
+
+                <tr><td>27</td><td>IB</td><td>68862503194</td><td>768207087</td><td>378870016</td><td>267809548</td><td>483662419</td><td>5988735614</td><td>76749787878</td></tr>
+                <tr><td>28</td><td>IBS</td><td>19251782285</td><td>1113090703</td><td>336349548</td><td>152956023</td><td>463189130</td><td>3561121339</td><td>24878489028</td></tr>
+
+                <tr><td>28</td><td>IB</td><td>11555410373</td><td>684555537</td><td>92288622</td><td>82273306</td><td>452345622</td><td>1836345671</td><td>14703219131</td></tr>
+                <tr><td>29</td><td>IBS</td><td>122759551933</td><td>2000600094</td><td>6749812825</td><td>1355363893</td><td>574066822</td><td>18685258665</td><td>152124654232</td></tr>
+
+                <tr><td>29</td><td>IB</td><td>113919151692</td><td>1784453916</td><td>6381343450</td><td>1313014911</td><td>532761855</td><td>16984236053</td><td>140914961877</td></tr>
+                <tr><td>30</td><td>IBS</td><td>12354915206</td><td>1108720218</td><td>109937976</td><td>166478151</td><td>511434075</td><td>2277954305</td><td>16529439931</td></tr>
+
+                <tr><td>30</td><td>IB</td><td>11154220092</td><td>735692301</td><td>81457029</td><td>138519863</td><td>468355116</td><td>2109417235</td><td>14687661636</td></tr>
+                <tr><td>31</td><td>IBS</td><td>4717113375</td><td>323319796</td><td>20782427</td><td>77618141</td><td>13245140</td><td>220369846</td><td>5372448725</td></tr>
+                <tr><td>31</td><td>IB</td><td>1842076650</td><td>277600560</td><td>8704296</td><td>55774196</td><td>6950057</td><td>116808730</td><td>2307914489</td></tr>
+                <tr><td>32</td><td>IBS</td><td>7014138575</td><td>273830649</td><td>245424242</td><td>74890157</td><td>161760645</td><td>1284484067</td><td>9054528335</td></tr>
+                <tr><td>32</td><td>IB</td><td>6619995380</td><td>249729830</td><td>224551986</td><td>65130032</td><td>154792778</td><td>1220371255</td><td>8534571261</td></tr>
+                <tr><td>33</td><td>IBS</td><td>681888311</td><td>381602342</td><td>1373635936</td><td>536690732</td><td>3363486</td><td>1508465640</td><td>4485646447</td></tr>
+                <tr><td>33</td><td>IB</td><td>154147150</td><td>16340006</td><td>7350874</td><td>10880432</td><td>2740921</td><td>87213973</td><td>278673356</td></tr>
+            </tbody>
+            <tfoot>
+                <tr class="table-primary"><td>JAWA BARAT</td><td>IBS</td><td>877205884586</td><td>39645397475</td><td>13942724715</td><td>11628727679</td><td>8900001039</td><td>97440071210</td><td>1048762806704</td></tr>
+                <tr class="table-primary"><td></td><td>IB</td><td>732192120418</td><td>33492849033</td><td>9537792854</td><td>10363257576</td><td>7427344264</td><td>80086048160</td><td>873099412305</td></tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <!-- JavaScript untuk JQuery, Bootstrap, dan DataTables beserta ekstensinya -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap5.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.2/js/dataTables.buttons.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.bootstrap5.js"></script>
+    <script src="https://cdn.datatables.net/responsive/3.0.2/js/dataTables.responsive.js"></script>
+    <script src="https://cdn.datatables.net/responsive/3.0.2/js/responsive.bootstrap5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.print.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        $('#inputCostTable').DataTable({
+            responsive: true,
+            
+            // Tata letak elemen kontrol dengan latar belakang abu-abu muda
+            dom:
+                "<'row bg-light pt-3 pb-2 rounded-top'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+                "<'row bg-light pb-3'<'col-sm-12 text-center'B>>" +
+                "<'row'<'col-sm-12'tr>>" +
+                "<'row bg-light p-2 rounded-bottom'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+
+            // Konfigurasi tombol ekspor
+            buttons: [
+                { extend: 'copy', text: 'Salin', className: 'btn btn-secondary' },
+                { extend: 'csv', text: 'CSV', className: 'btn btn-secondary' },
+                { extend: 'excel', text: 'Excel', className: 'btn btn-success' },
+                { 
+                    extend: 'pdf', 
+                    text: 'PDF', 
+                    className: 'btn btn-danger',
+                    orientation: 'landscape',
+                    pageSize: 'LEGAL'
+                },
+                { 
+                    extend: 'print', 
+                    text: 'Cetak', 
+                    className: 'btn btn-info'
+                }
+            ],
+
+            // Terjemahkan teks ke Bahasa Indonesia
+            language: {
+                "lengthMenu": "Tampilkan _MENU_ data",
+                "zeroRecords": "Data tidak ditemukan",
+                "info": "Menampilkan halaman _PAGE_ dari _PAGES_",
+                "infoEmpty": "Tidak ada data yang tersedia",
+                "infoFiltered": "(difilter dari _MAX_ total data)",
+                "search": "Cari:",
+                "paginate": {
+                    "first": "Pertama",
+                    "last": "Terakhir",
+                    "next": "›",
+                    "previous": "‹"
+                }
+            },
+
+            // Definisikan tipe kolom agar pengurutan angka berjalan benar
+            "columnDefs": [
+                { "className": "text-end", "targets": [2, 3, 4, 5, 6, 7, 8] }
+            ]
+        });
+    });
+    </script>
+
+</body>
+</html>
