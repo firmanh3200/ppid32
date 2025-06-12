@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pengeluaran Pekerja Menurut Kode Industri</title>
+    
+    <!-- CSS DataTables & Ekstensi -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+
+    <!-- Style tambahan -->
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            padding: 15px;
+            background-color: #f4f4f9;
+            font-size: 14px;
+        }
+        .container {
+            width: 100%;
+            max-width: 95%; /* Dibuat lebih lebar untuk tabel ini */
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow-x: hidden;
+        }
+        h1, h2 { text-align: center; color: #333; margin: 0; }
+        h1 { font-size: 1.4em; }
+        h2 { font-size: 1.1em; font-style: italic; font-weight: normal; color: #666; margin-bottom: 25px; }
+        
+        table.dataTable thead th {
+            text-align: center;
+            vertical-align: middle;
+            background-color: #e9ecef;
+        }
+        table.dataTable tfoot th {
+            text-align: right;
+            font-weight: bold;
+            background-color: #f8f9fa;
+        }
+        .dt-buttons .btn-secondary {
+            background-color: #007bff; color: white; border-radius: 4px; margin: 0 2px;
+        }
+        .dt-buttons .btn-secondary:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Tabel 4.1 Pengeluaran untuk Pekerja menurut Kode Industri dan Jenis Pengeluaran, 2022</h1>
+    <h2>Table 4.1 Expenditure on Workers by Industrial Code and Type of Expenditure, 2022</h2>
+    
+    <table id="tabel-pengeluaran" class="display responsive nowrap" style="width:100%">
+        <thead>
+            <tr>
+                <th rowspan="2" data-priority="1">Kode Industri</th>
+                <th rowspan="2" data-priority="2">Skala Industri</th>
+                <th colspan="3">Pengeluaran untuk Pekerja Produksi (000 Rp)</th>
+                <th colspan="3">Pengeluaran untuk Pekerja Lainnya (000 Rp)</th>
+                <th rowspan="2" data-priority="1">Jumlah Pengeluaran Total (000 Rp)</th>
+            </tr>
+            <tr>
+                <th>Upah/Gaji, Lembur, Tunjangan</th>
+                <th>Lainnya</th>
+                <th data-priority="3">Jumlah</th>
+                <th>Upah/Gaji, Lembur, Tunjangan</th>
+                <th>Lainnya</th>
+                <th data-priority="4">Jumlah</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>10</td><td>IBS</td><td>5490322860</td><td>215306481</td><td>5705629341</td><td>2089997512</td><td>116484482</td><td>2206481994</td><td>7912111335</td></tr>
+            <tr><td>10</td><td>IB</td><td>4692312199</td><td>192821939</td><td>4885134138</td><td>1825717319</td><td>107371707</td><td>1933089026</td><td>6818223164</td></tr>
+            <tr><td>11</td><td>IBS</td><td>1454638788</td><td>67150363</td><td>1521789151</td><td>462576167</td><td>13041668</td><td>475617835</td><td>1997406986</td></tr>
+            <tr><td>11</td><td>IB</td><td>1332628187</td><td>62184514</td><td>1394812701</td><td>420137816</td><td>9841600</td><td>429979416</td><td>1824792117</td></tr>
+            <tr><td>12</td><td>IBS</td><td>465200215</td><td>5137056</td><td>470337271</td><td>62057566</td><td>137626</td><td>62195192</td><td>532532463</td></tr>
+            <tr><td>12</td><td>IB</td><td>461382264</td><td>4377867</td><td>465760131</td><td>60458000</td><td>0</td><td>60458000</td><td>526218131</td></tr>
+            <tr><td>13</td><td>IBS</td><td>9255928886</td><td>300532536</td><td>9556461422</td><td>1868309907</td><td>92609576</td><td>1960919483</td><td>11517380905</td></tr>
+            <tr><td>13</td><td>IB</td><td>8522053404</td><td>276926595</td><td>8798979999</td><td>1725613485</td><td>86048111</td><td>1811661596</td><td>10610641595</td></tr>
+            <tr><td>14</td><td>IBS</td><td>11591365669</td><td>279096157</td><td>11870461826</td><td>1853700384</td><td>54859125</td><td>1908559509</td><td>13779021335</td></tr>
+            <tr><td>14</td><td>IB</td><td>11218026097</td><td>270252087</td><td>11488278184</td><td>1809209580</td><td>53648357</td><td>1862857937</td><td>13351136121</td></tr>
+            <tr><td>15</td><td>IBS</td><td>8030511491</td><td>334242824</td><td>8364754315</td><td>909924117</td><td>119638903</td><td>1029563020</td><td>9394317335</td></tr>
+            <tr><td>15</td><td>IB</td><td>7909753928</td><td>328962950</td><td>8238716878</td><td>871847368</td><td>118146137</td><td>989993505</td><td>9228710383</td></tr>
+            <tr><td>16</td><td>IBS</td><td>563736529</td><td>18802679</td><td>582539208</td><td>94426742</td><td>3349049</td><td>97775791</td><td>680314999</td></tr>
+            <tr><td>16</td><td>IB</td><td>430914739</td><td>14186554</td><td>445101293</td><td>70872059</td><td>2063314</td><td>72935373</td><td>518036666</td></tr>
+            <tr><td>17</td><td>IBS</td><td>2142930068</td><td>149268488</td><td>2292198556</td><td>643576985</td><td>64421239</td><td>707998224</td><td>3000196780</td></tr>
+            <tr><td>17</td><td>IB</td><td>1869459911</td><td>139171463</td><td>2008631374</td><td>578794146</td><td>60467848</td><td>639261994</td><td>2647893368</td></tr>
+            <tr><td>18</td><td>IBS</td><td>892588918</td><td>18120452</td><td>910709370</td><td>507229837</td><td>7692491</td><td>514922328</td><td>1425631698</td></tr>
+            <tr><td>18</td><td>IB</td><td>700776529</td><td>10257392</td><td>711033921</td><td>446505760</td><td>3514621</td><td>450020381</td><td>1161054302</td></tr>
+            <tr><td>19</td><td>IBS</td><td>527550938</td><td>63233733</td><td>590784671</td><td>57043992</td><td>32345866</td><td>89389858</td><td>680174529</td></tr>
+            <tr><td>19</td><td>IB</td><td>447100726</td><td>59048747</td><td>506149473</td><td>27378676</td><td>30652053</td><td>58030729</td><td>564180202</td></tr>
+            <tr><td>20</td><td>IBS</td><td>3092500247</td><td>301242752</td><td>3393742999</td><td>1628090375</td><td>258666178</td><td>1886756553</td><td>5280499552</td></tr>
+            <tr><td>20</td><td>IB</td><td>2473783009</td><td>272951171</td><td>2746734180</td><td>1235601886</td><td>239015823</td><td>1474617709</td><td>4221351889</td></tr>
+            <tr><td>21</td><td>IBS</td><td>1123612124</td><td>66238824</td><td>1189850948</td><td>1175576782</td><td>111582104</td><td>1287158886</td><td>2477009834</td></tr>
+            <tr><td>21</td><td>IB</td><td>1035037488</td><td>60641681</td><td>1095679169</td><td>1097436103</td><td>105558197</td><td>1202994300</td><td>2298673469</td></tr>
+            <tr><td>22</td><td>IBS</td><td>5396776882</td><td>211910675</td><td>5608687557</td><td>1087462335</td><td>50451143</td><td>1137913478</td><td>6746601035</td></tr>
+            <tr><td>22</td><td>IB</td><td>4623485246</td><td>187469700</td><td>4810954946</td><td>877882910</td><td>38371699</td><td>916254609</td><td>5727209555</td></tr>
+            <tr><td>23</td><td>IBS</td><td>2357849076</td><td>168399691</td><td>2526248767</td><td>640084589</td><td>111872093</td><td>751956682</td><td>3278205449</td></tr>
+            <tr><td>23</td><td>IB</td><td>1962941193</td><td>151923123</td><td>2114864316</td><td>552894670</td><td>104712252</td><td>657606922</td><td>2772471238</td></tr>
+            <tr><td>24</td><td>IBS</td><td>1343880146</td><td>121615303</td><td>1465495449</td><td>536420588</td><td>59717752</td><td>596138340</td><td>2061633789</td></tr>
+            <tr><td>24</td><td>IB</td><td>1151654410</td><td>108040013</td><td>1259694423</td><td>462266996</td><td>55695923</td><td>517962919</td><td>1777657342</td></tr>
+            <tr><td>25</td><td>IBS</td><td>3276861302</td><td>123797186</td><td>3400658488</td><td>1517010108</td><td>104993569</td><td>1622003677</td><td>5022662165</td></tr>
+            <tr><td>25</td><td>IB</td><td>2583129978</td><td>102670934</td><td>2685800912</td><td>1267089999</td><td>96364443</td><td>1363454442</td><td>4049255354</td></tr>
+            <tr><td>26</td><td>IBS</td><td>3887099323</td><td>173194177</td><td>4060293500</td><td>848312702</td><td>104434024</td><td>952746726</td><td>5013040226</td></tr>
+            <tr><td>26</td><td>IB</td><td>3743691778</td><td>170534792</td><td>3914226570</td><td>781821854</td><td>101592399</td><td>883414253</td><td>4797640823</td></tr>
+            <tr><td>27</td><td>IBS</td><td>4067091989</td><td>336796802</td><td>4403888791</td><td>946220548</td><td>68965694</td><td>1015186242</td><td>5419075033</td></tr>
+            <tr><td>27</td><td>IB</td><td>3843815884</td><td>317817276</td><td>4161633160</td><td>886299781</td><td>62668707</td><td>948968488</td><td>5110601648</td></tr>
+            <tr><td>28</td><td>IBS</td><td>2531412391</td><td>101822338</td><td>2633234729</td><td>824312112</td><td>46863780</td><td>871175892</td><td>3504410621</td></tr>
+            <tr><td>28</td><td>IB</td><td>1860706331</td><td>75323186</td><td>1936029517</td><td>572527028</td><td>36290760</td><td>608817788</td><td>2544847305</td></tr>
+            <tr><td>29</td><td>IBS</td><td>9755762797</td><td>1118186211</td><td>10873949008</td><td>2609650207</td><td>311317919</td><td>2920968126</td><td>13794917134</td></tr>
+            <tr><td>29</td><td>IB</td><td>8986258224</td><td>1054093786</td><td>10040352010</td><td>2423851991</td><td>289303115</td><td>2713155106</td><td>12753507116</td></tr>
+            <tr><td>30</td><td>IBS</td><td>3102057478</td><td>118669998</td><td>3220727476</td><td>892608652</td><td>54497682</td><td>947106334</td><td>4167833810</td></tr>
+            <tr><td>30</td><td>IB</td><td>2932591023</td><td>116167606</td><td>3048758629</td><td>853706855</td><td>45688579</td><td>899395434</td><td>3948154063</td></tr>
+            <tr><td>31</td><td>IBS</td><td>879471346</td><td>62440552</td><td>941911898</td><td>213715178</td><td>7935873</td><td>221651051</td><td>1163562949</td></tr>
+            <tr><td>31</td><td>IB</td><td>576755245</td><td>46645068</td><td>623400313</td><td>148788102</td><td>6121942</td><td>154910044</td><td>778310357</td></tr>
+            <tr><td>32</td><td>IBS</td><td>3425550017</td><td>237738275</td><td>3663288292</td><td>510690429</td><td>23866528</td><td>534556957</td><td>4197845249</td></tr>
+            <tr><td>32</td><td>IB</td><td>3229393325</td><td>228372497</td><td>3457765822</td><td>460318786</td><td>22374479</td><td>482693265</td><td>3940459087</td></tr>
+            <tr><td>33</td><td>IBS</td><td>200201899</td><td>16461183</td><td>216663082</td><td>59336145</td><td>1165008</td><td>60501153</td><td>277164235</td></tr>
+            <tr><td>33</td><td>IB</td><td>124319128</td><td>9236269</td><td>133555397</td><td>33781671</td><td>876682</td><td>34658353</td><td>168213750</td></tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="2">JAWA BARAT (IBS)</th>
+                <th>84854901379</th><th>4609404736</th><th>89464306115</th><th>22038333959</th><th>1820909372</th><th>23859243331</th><th>113323549446</th>
+            </tr>
+            <tr>
+                <th colspan="2">JAWA BARAT (IB)</th>
+                <th>76711970246</th><th>4260077210</th><th>80972047456</th><th>19490802841</th><th>1676388748</th><th>21167191589</th><th>102139239045</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<!-- Pustaka JavaScript yang Diperlukan -->
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+
+<!-- Skrip untuk inisialisasi DataTable -->
+<script>
+$(document).ready(function() {
+    $('#tabel-pengeluaran').DataTable( {
+        responsive: true,
+        dom: 'lBfrtip',
+        buttons: [
+            { extend: 'copy', text: 'Salin' },
+            { extend: 'csv', text: 'CSV' },
+            { extend: 'excel', text: 'Excel', title: 'Data Pengeluaran Pekerja per Industri 2022' },
+            { 
+              extend: 'pdf', 
+              text: 'PDF', 
+              title: 'Data Pengeluaran Pekerja per Industri 2022',
+              orientation: 'landscape',
+              pageSize: 'A4'
+            },
+            { 
+              extend: 'print', 
+              text: 'Cetak', 
+              title: 'Data Pengeluaran Pekerja per Industri 2022'
+            }
+        ],
+        language: { "url": "https://cdn.datatables.net/plug-ins/1.13.7/i18n/id.json" }
+    });
+});
+</script>
+
+</body>
+</html>
