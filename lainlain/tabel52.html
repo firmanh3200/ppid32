@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Tenaga Listrik per Kabupaten/Kota</title>
+    
+    <!-- CSS DataTables & Ekstensi -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+
+    <!-- Style tambahan -->
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            padding: 15px;
+            background-color: #f4f4f9;
+            font-size: 14px;
+        }
+        .container {
+            width: 100%;
+            max-width: 95%; /* Dibuat lebih lebar untuk tabel ini */
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow-x: hidden;
+        }
+        h1, h2 { text-align: center; color: #333; margin: 0; }
+        h1 { font-size: 1.4em; }
+        h2 { font-size: 1.1em; font-style: italic; font-weight: normal; color: #666; margin-bottom: 25px; }
+        
+        table.dataTable thead th {
+            text-align: center;
+            vertical-align: middle;
+            background-color: #e9ecef;
+        }
+        table.dataTable tfoot th {
+            text-align: right;
+            font-weight: bold;
+            background-color: #f8f9fa;
+        }
+        .dt-buttons .btn-secondary {
+            background-color: #007bff; color: white; border-radius: 4px; margin: 0 2px;
+        }
+        .dt-buttons .btn-secondary:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Tabel 5.2 Tenaga Listrik yang Dibangkitkan, yang Dibeli, dan Dijual menurut Kabupaten/Kota, 2022</h1>
+    <h2>Table 5.2 Electricity Generated, Purchased and Sold by Regency/Municipality, 2022</h2>
+    
+    <table id="tabel-listrik-kabupaten" class="display responsive nowrap" style="width:100%">
+        <thead>
+            <tr>
+                <th rowspan="2" data-priority="1">Kabupaten/Kota</th>
+                <th rowspan="2" data-priority="2">Skala Industri</th>
+                <th rowspan="2" data-priority="3">Dibangkitkan (KWH)</th>
+                <th colspan="2">Tenaga Listrik yang Dibeli</th>
+                <th colspan="2">Tenaga Listrik yang Dijual</th>
+            </tr>
+            <tr>
+                <th data-priority="4">Banyaknya (KWH)</th>
+                <th>Nilai (000 Rp)</th>
+                <th>Banyaknya (KWH)</th>
+                <th>Nilai (000 Rp)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Kabupaten Bogor</td><td>IBS</td><td>162961799</td><td>3039192581</td><td>3540863627</td><td>957505</td><td>1532002</td></tr>
+            <tr><td>Kabupaten Bogor</td><td>IB</td><td>74291974</td><td>2790678776</td><td>3218360815</td><td>862981</td><td>1380766</td></tr>
+            <tr><td>Kabupaten Sukabumi</td><td>IBS</td><td>88809285</td><td>370326148</td><td>547747247</td><td>19372</td><td>30994</td></tr>
+            <tr><td>Kabupaten Sukabumi</td><td>IB</td><td>1158072</td><td>161420791</td><td>235110096</td><td>19339</td><td>30940</td></tr>
+            <tr><td>Kabupaten Cianjur</td><td>IBS</td><td>59344</td><td>96331123</td><td>122349634</td><td>3848</td><td>6157</td></tr>
+            <tr><td>Kabupaten Cianjur</td><td>IB</td><td>57131</td><td>90922072</td><td>114620583</td><td>3847</td><td>6156</td></tr>
+            <tr><td>Kabupaten Bandung</td><td>IBS</td><td>8615308</td><td>1055086337</td><td>1278640002</td><td>1788824</td><td>1486889</td></tr>
+            <tr><td>Kabupaten Bandung</td><td>IB</td><td>8298620</td><td>929562624</td><td>1124656787</td><td>1787089</td><td>1484115</td></tr>
+            <tr><td>Kabupaten Garut</td><td>IBS</td><td>87630760</td><td>25641188</td><td>35484017</td><td>0</td><td>0</td></tr>
+            <tr><td>Kabupaten Garut</td><td>IB</td><td>89216</td><td>20067284</td><td>28570368</td><td>0</td><td>0</td></tr>
+            <tr><td>Kabupaten Tasikmalaya</td><td>IBS</td><td>95</td><td>4104404</td><td>5185884</td><td>0</td><td>0</td></tr>
+            <tr><td>Kabupaten Tasikmalaya</td><td>IB</td><td>0</td><td>2375852</td><td>2970389</td><td>0</td><td>0</td></tr>
+            <tr><td>Kabupaten Ciamis</td><td>IBS</td><td>0</td><td>6625640</td><td>8970915</td><td>0</td><td>0</td></tr>
+            <tr><td>Kabupaten Ciamis</td><td>IB</td><td>0</td><td>3716417</td><td>5762579</td><td>0</td><td>0</td></tr>
+            <tr><td>Kabupaten Kuningan</td><td>IBS</td><td>0</td><td>6665749</td><td>9101665</td><td>0</td><td>0</td></tr>
+            <tr><td>Kabupaten Kuningan</td><td>IB</td><td>0</td><td>6003148</td><td>8256575</td><td>0</td><td>0</td></tr>
+            <tr><td>Kabupaten Cirebon</td><td>IBS</td><td>1048953</td><td>615332836</td><td>761873754</td><td>15</td><td>23</td></tr>
+            <tr><td>Kabupaten Cirebon</td><td>IB</td><td>1019207</td><td>584934998</td><td>719415898</td><td>0</td><td>0</td></tr>
+            <tr><td>Kabupaten Majalengka</td><td>IBS</td><td>152183477</td><td>278676074</td><td>341584012</td><td>70</td><td>111</td></tr>
+            <tr><td>Kabupaten Majalengka</td><td>IB</td><td>152171623</td><td>275719457</td><td>337451642</td><td>70</td><td>111</td></tr>
+            <tr><td>Kabupaten Sumedang</td><td>IBS</td><td>107398</td><td>1197187864</td><td>1427590010</td><td>927</td><td>1482</td></tr>
+            <tr><td>Kabupaten Sumedang</td><td>IB</td><td>100010</td><td>1184996794</td><td>1409628662</td><td>0</td><td>0</td></tr>
+            <tr><td>Kabupaten Indramayu</td><td>IBS</td><td>87826524</td><td>137057000</td><td>230622558</td><td>0</td><td>0</td></tr>
+            <tr><td>Kabupaten Indramayu</td><td>IB</td><td>280271</td><td>128940901</td><td>217464758</td><td>0</td><td>0</td></tr>
+            <tr><td>Kabupaten Subang</td><td>IBS</td><td>356877</td><td>743536071</td><td>933761743</td><td>125533</td><td>200852</td></tr>
+            <tr><td>Kabupaten Subang</td><td>IB</td><td>348968</td><td>734939906</td><td>922731179</td><td>0</td><td>0</td></tr>
+            <tr><td>Kabupaten Purwakarta</td><td>IBS</td><td>1366206</td><td>408155179</td><td>578980361</td><td>19307</td><td>30886</td></tr>
+            <tr><td>Kabupaten Purwakarta</td><td>IB</td><td>1281777</td><td>393023758</td><td>557130057</td><td>19245</td><td>30788</td></tr>
+            <tr><td>Kabupaten Karawang</td><td>IBS</td><td>183293718</td><td>3263494537</td><td>4049583535</td><td>7961035</td><td>13162</td></tr>
+            <tr><td>Kabupaten Karawang</td><td>IB</td><td>7788948</td><td>2374961435</td><td>2983457396</td><td>7960991</td><td>13091</td></tr>
+            <tr><td>Kabupaten Bekasi</td><td>IBS</td><td>622980672</td><td>3962528863</td><td>5317879932</td><td>2290915</td><td>3665455</td></tr>
+            <tr><td>Kabupaten Bekasi</td><td>IB</td><td>6810271</td><td>2827609832</td><td>3916280506</td><td>2002135</td><td>3203399</td></tr>
+            <tr><td>Kabupaten Bandung Barat</td><td>IBS</td><td>89446304</td><td>438299538</td><td>586203986</td><td>185525</td><td>296837</td></tr>
+            <tr><td>Kabupaten Bandung Barat</td><td>IB</td><td>1880963</td><td>383621386</td><td>512512695</td><td>185457</td><td>296727</td></tr>
+            <tr><td>Kabupaten Pangandaran</td><td>IBS</td><td>0</td><td>6020219</td><td>6855294</td><td>0</td><td>0</td></tr>
+            <tr><td>Kabupaten Pangandaran</td><td>IB</td><td>0</td><td>5653596</td><td>6347334</td><td>0</td><td>0</td></tr>
+            <tr><td>Kota Bogor</td><td>IBS</td><td>36587</td><td>36794983</td><td>43142629</td><td>0</td><td>0</td></tr>
+            <tr><td>Kota Bogor</td><td>IB</td><td>36587</td><td>32214017</td><td>36827818</td><td>0</td><td>0</td></tr>
+            <tr><td>Kota Sukabumi</td><td>IBS</td><td>0</td><td>4290648</td><td>4944509</td><td>0</td><td>0</td></tr>
+            <tr><td>Kota Sukabumi</td><td>IB</td><td>0</td><td>2755876</td><td>3854172</td><td>0</td><td>0</td></tr>
+            <tr><td>Kota Bandung</td><td>IBS</td><td>1866298</td><td>470602897</td><td>547564267</td><td>91</td><td>146</td></tr>
+            <tr><td>Kota Bandung</td><td>IB</td><td>1851484</td><td>420830989</td><td>481345365</td><td>0</td><td>0</td></tr>
+            <tr><td>Kota Cirebon</td><td>IBS</td><td>122100</td><td>6929730</td><td>11559593</td><td>0</td><td>0</td></tr>
+            <tr><td>Kota Cirebon</td><td>IB</td><td>0</td><td>4173692</td><td>7089644</td><td>0</td><td>0</td></tr>
+            <tr><td>Kota Bekasi</td><td>IBS</td><td>327449206</td><td>351230670</td><td>531592219</td><td>29216</td><td>46745</td></tr>
+            <tr><td>Kota Bekasi</td><td>IB</td><td>327249421</td><td>218645532</td><td>321333429</td><td>27538</td><td>44057</td></tr>
+            <tr><td>Kota Depok</td><td>IBS</td><td>127376</td><td>113246133</td><td>147623123</td><td>35902</td><td>57440</td></tr>
+            <tr><td>Kota Depok</td><td>IB</td><td>96904</td><td>79236693</td><td>97898233</td><td>35759</td><td>57212</td></tr>
+            <tr><td>Kota Cimahi</td><td>IBS</td><td>245213</td><td>1801271742</td><td>2001646312</td><td>172</td><td>276</td></tr>
+            <tr><td>Kota Cimahi</td><td>IB</td><td>218772</td><td>1645577004</td><td>1851623450</td><td>0</td><td>0</td></tr>
+            <tr><td>Kota Tasikmalaya</td><td>IBS</td><td>5916</td><td>9527125</td><td>11382820</td><td>0</td><td>0</td></tr>
+            <tr><td>Kota Tasikmalaya</td><td>IB</td><td>5916</td><td>6561374</td><td>7756905</td><td>0</td><td>0</td></tr>
+            <tr><td>Kota Banjar</td><td>IBS</td><td>2344</td><td>416325</td><td>546580</td><td>0</td><td>0</td></tr>
+            <tr><td>Kota Banjar</td><td>IB</td><td>2344</td><td>165348</td><td>223085</td><td>0</td><td>0</td></tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="2">Jawa Barat (IBS)</th>
+                <th>1816541760</th><th>18448571604</th><th>23083280228</th><th>13418257</th><th>7369457</th>
+            </tr>
+            <tr>
+                <th colspan="2">Jawa Barat (IB)</th>
+                <th>585038479</th><th>15309309552</th><th>19128680420</th><th>12904451</th><th>6547362</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<!-- Pustaka JavaScript yang Diperlukan -->
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+
+<!-- Skrip untuk inisialisasi DataTable -->
+<script>
+$(document).ready(function() {
+    $('#tabel-listrik-kabupaten').DataTable( {
+        responsive: true,
+        dom: 'lBfrtip',
+        buttons: [
+            { extend: 'copy', text: 'Salin' },
+            { extend: 'csv', text: 'CSV' },
+            { extend: 'excel', text: 'Excel', title: 'Data Tenaga Listrik per Kab-Kota 2022' },
+            { 
+              extend: 'pdf', 
+              text: 'PDF', 
+              title: 'Data Tenaga Listrik per Kab-Kota 2022',
+              orientation: 'landscape',
+              pageSize: 'A4'
+            },
+            { 
+              extend: 'print', 
+              text: 'Cetak', 
+              title: 'Data Tenaga Listrik per Kab-Kota 2022'
+            }
+        ],
+        language: { "url": "https://cdn.datatables.net/plug-ins/1.13.7/i18n/id.json" }
+    });
+});
+</script>
+
+</body>
+</html>
