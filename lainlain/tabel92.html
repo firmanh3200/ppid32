@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel 9.2 Nilai Tambah menurut Kabupaten/Kota, 2022</title>
+
+    <!-- CSS untuk Bootstrap 5 dan Ekstensi DataTables -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/2.0.8/css/dataTables.bootstrap5.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/buttons/3.0.2/css/buttons.bootstrap5.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/responsive/3.0.2/css/responsive.bootstrap5.css" rel="stylesheet">
+
+    <style>
+        /* CSS Kustom untuk Tampilan yang Lebih Baik */
+        body {
+            background-color: #f0f2f5;
+            font-size: 0.9rem;
+        }
+        .container-fluid {
+            background-color: #ffffff;
+            padding: 2rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        h1 {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+        h2 {
+            font-size: 1.2rem;
+            color: #6c757d;
+            margin-bottom: 1rem;
+        }
+        table.dataTable th {
+            white-space: nowrap;
+        }
+        .text-end {
+            text-align: right !important;
+        }
+        tfoot {
+            font-weight: bold;
+        }
+        .dataTables_wrapper .row:last-child {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <h1>Tabel 9.2 Nilai Tambah menurut Kabupaten/Kota, 2022</h1>
+        <h2><i>Table 9.2 Value Added by Regency/Municipality, 2022</i></h2>
+        <p class="text-center text-muted">Nilai dalam Ribuan Rupiah <i>(Value in Thousand Rupiah)</i></p>
+
+        <table id="valueAddedKotaTable" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Kabupaten/Kota</th>
+                    <th>Skala Industri</th>
+                    <th>Nilai Output</th>
+                    <th>Biaya Input</th>
+                    <th>Nilai Tambah (harga pasar)</th>
+                    <th>Pajak Tak Langsung</th>
+                    <th>Nilai Tambah (biaya faktor produksi)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- DATA DIBAWAH INI TELAH DIBERSIHKAN: Titik ribuan dihilangkan, '–' dan sel kosong diganti dengan 0 -->
+                <tr><td>Kabupaten Bogor</td><td>IBS</td><td>213612733966</td><td>110569328981</td><td>103043404984</td><td>786611950</td><td>102256793034</td></tr>
+                <tr><td>Kabupaten Bogor</td><td>IB</td><td>157527362239</td><td>83598712821</td><td>73928649417</td><td>572039281</td><td>73356610136</td></tr>
+                <tr><td>Kabupaten Sukabumi</td><td>IBS</td><td>57894309994</td><td>28614087506</td><td>29280222488</td><td>34453992</td><td>29245768496</td></tr>
+                <tr><td>Kabupaten Sukabumi</td><td>IB</td><td>44100158074</td><td>22189559336</td><td>21910598738</td><td>22800806</td><td>21887797932</td></tr>
+                <tr><td>Kabupaten Cianjur</td><td>IBS</td><td>42389028654</td><td>24888012683</td><td>17501015971</td><td>135203280</td><td>17365812691</td></tr>
+                <tr><td>Kabupaten Cianjur</td><td>IB</td><td>41191192089</td><td>24296106327</td><td>16895085762</td><td>130334446</td><td>16764751316</td></tr>
+                <tr><td>Kabupaten Bandung</td><td>IBS</td><td>145833962667</td><td>89290051599</td><td>56543911068</td><td>480651635</td><td>56063259433</td></tr>
+                <tr><td>Kabupaten Bandung</td><td>IB</td><td>117764856837</td><td>71243406035</td><td>46521450802</td><td>437679399</td><td>46083771403</td></tr>
+                <tr><td>Kabupaten Garut</td><td>IBS</td><td>13228503397</td><td>7601575569</td><td>5626927828</td><td>16362125</td><td>5610565703</td></tr>
+                <tr><td>Kabupaten Garut</td><td>IB</td><td>12175955351</td><td>6909324137</td><td>5266631214</td><td>11667622</td><td>5254963592</td></tr>
+                <tr><td>Kabupaten Tasikmalaya</td><td>IBS</td><td>700198922</td><td>304383729</td><td>395815193</td><td>41406380</td><td>354408813</td></tr>
+                <tr><td>Kabupaten Tasikmalaya</td><td>IB</td><td>532211388</td><td>212991450</td><td>319219938</td><td>39857105</td><td>279362833</td></tr>
+                <tr><td>Kabupaten Ciamis</td><td>IBS</td><td>599402073</td><td>368492779</td><td>230909294</td><td>3061366</td><td>227847928</td></tr>
+                <tr><td>Kabupaten Ciamis</td><td>IB</td><td>339930450</td><td>207606775</td><td>132323675</td><td>2481786</td><td>129841889</td></tr>
+                <tr><td>Kabupaten Kuningan</td><td>IBS</td><td>1009045241</td><td>552723070</td><td>456322171</td><td>27860451</td><td>428461720</td></tr>
+                <tr><td>Kabupaten Kuningan</td><td>IB</td><td>779096774</td><td>391076170</td><td>388020604</td><td>21792745</td><td>366227859</td></tr>
+                <tr><td>Kabupaten Cirebon</td><td>IBS</td><td>35249531231</td><td>18068555733</td><td>17180975498</td><td>220495542</td><td>16960479956</td></tr>
+                <tr><td>Kabupaten Cirebon</td><td>IB</td><td>29902129068</td><td>15146329696</td><td>14755799372</td><td>154886861</td><td>14600912511</td></tr>
+                <tr><td>Kabupaten Majalengka</td><td>IBS</td><td>16633823210</td><td>9694077763</td><td>6939745447</td><td>34468076</td><td>6905277371</td></tr>
+                <tr><td>Kabupaten Majalengka</td><td>IB</td><td>15526116059</td><td>9072851117</td><td>6453264942</td><td>30567661</td><td>6422697281</td></tr>
+                <tr><td>Kabupaten Sumedang</td><td>IBS</td><td>33870463683</td><td>18860980882</td><td>15009482801</td><td>168039320</td><td>14841443481</td></tr>
+                <tr><td>Kabupaten Sumedang</td><td>IB</td><td>30503544005</td><td>17599244613</td><td>12904299392</td><td>155334935</td><td>12748964457</td></tr>
+                <tr><td>Kabupaten Indramayu</td><td>IBS</td><td>53450455238</td><td>27778353589</td><td>25672101649</td><td>40430590</td><td>25631671059</td></tr>
+                <tr><td>Kabupaten Indramayu</td><td>IB</td><td>50599605597</td><td>25339983538</td><td>25259622059</td><td>36754201</td><td>25222867858</td></tr>
+                <tr><td>Kabupaten Subang</td><td>IBS</td><td>72718658936</td><td>15225845721</td><td>57492813215</td><td>199069230</td><td>57293743985</td></tr>
+                <tr><td>Kabupaten Subang</td><td>IB</td><td>70403760948</td><td>13689332962</td><td>56714427986</td><td>193071508</td><td>56521356478</td></tr>
+                <tr><td>Kabupaten Purwakarta</td><td>IBS</td><td>86922712208</td><td>37782649500</td><td>49140062708</td><td>55301290</td><td>49084761418</td></tr>
+                <tr><td>Kabupaten Purwakarta</td><td>IB</td><td>82397857981</td><td>35101597944</td><td>47296260037</td><td>51401179</td><td>47244858858</td></tr>
+                <tr><td>Kabupaten Karawang</td><td>IBS</td><td>304970123562</td><td>174318258929</td><td>130651864633</td><td>1133856416</td><td>129518008217</td></tr>
+                <tr><td>Kabupaten Karawang</td><td>IB</td><td>266250733819</td><td>151352953339</td><td>114897780480</td><td>910960594</td><td>113986819886</td></tr>
+                <tr><td>Kabupaten Bekasi</td><td>IBS</td><td>670768242801</td><td>347778925012</td><td>322989317789</td><td>2203082412</td><td>320786235377</td></tr>
+                <tr><td>Kabupaten Bekasi</td><td>IB</td><td>558503590390</td><td>285874045895</td><td>272629544495</td><td>1680937996</td><td>270948606499</td></tr>
+                <tr><td>Kabupaten Bandung Barat</td><td>IBS</td><td>48941582256</td><td>25266861859</td><td>23674720397</td><td>272187274</td><td>23402533123</td></tr>
+                <tr><td>Kabupaten Bandung Barat</td><td>IB</td><td>43910725227</td><td>22473407435</td><td>21437317792</td><td>206941209</td><td>21230376583</td></tr>
+                <tr><td>Kabupaten Pangandaran</td><td>IBS</td><td>197313125</td><td>151450033</td><td>45863092</td><td>3799008</td><td>42064084</td></tr>
+                <tr><td>Kabupaten Pangandaran</td><td>IB</td><td>170448489</td><td>133764139</td><td>36684350</td><td>3752178</td><td>32932172</td></tr>
+                <tr><td>Kota Bogor</td><td>IBS</td><td>5769620950</td><td>2682944399</td><td>3086676551</td><td>178393693</td><td>2908282858</td></tr>
+                <tr><td>Kota Bogor</td><td>IB</td><td>5033619515</td><td>2338593701</td><td>2695025814</td><td>171857753</td><td>2523168061</td></tr>
+                <tr><td>Kota Sukabumi</td><td>IBS</td><td>475070879</td><td>305709822</td><td>169361057</td><td>7000121</td><td>162360936</td></tr>
+                <tr><td>Kota Sukabumi</td><td>IB</td><td>340886350</td><td>213088183</td><td>127798167</td><td>3341025</td><td>124457142</td></tr>
+                <tr><td>Kota Bandung</td><td>IBS</td><td>42291045139</td><td>21765064192</td><td>20525980947</td><td>273446704</td><td>20252534243</td></tr>
+                <tr><td>Kota Bandung</td><td>IB</td><td>36638506069</td><td>18696145459</td><td>17942360610</td><td>210011504</td><td>17732349106</td></tr>
+                <tr><td>Kota Cirebon</td><td>IBS</td><td>3737685905</td><td>2098069272</td><td>1639616633</td><td>77839395</td><td>1561777238</td></tr>
+                <tr><td>Kota Cirebon</td><td>IB</td><td>3403365844</td><td>1929118104</td><td>1474247740</td><td>72492419</td><td>1401755321</td></tr>
+                <tr><td>Kota Bekasi</td><td>IBS</td><td>89353177123</td><td>47539698962</td><td>41813478161</td><td>250542773</td><td>41562935388</td></tr>
+
+                <tr><td>Kota Bekasi</td><td>IB</td><td>69951495836</td><td>37816085760</td><td>32135410076</td><td>175675773</td><td>31959734303</td></tr>
+                <tr><td>Kota Depok</td><td>IBS</td><td>31233436940</td><td>14170876541</td><td>17062560399</td><td>262266635</td><td>16800293764</td></tr>
+
+                <tr><td>Kota Depok</td><td>IB</td><td>13429119748</td><td>6015272104</td><td>7413847644</td><td>235212655</td><td>7178634989</td></tr>
+                <tr><td>Kota Cimahi</td><td>IBS</td><td>36843139406</td><td>21998236139</td><td>14844903267</td><td>305261190</td><td>14539642077</td></tr>
+
+                <tr><td>Kota Cimahi</td><td>IB</td><td>34092909173</td><td>20491954852</td><td>13600954321</td><td>294856181</td><td>13306098140</td></tr>
+                <tr><td>Kota Tasikmalaya</td><td>IBS</td><td>1092043109</td><td>648936451</td><td>443106658</td><td>1252039</td><td>441854619</td></tr>
+
+                <tr><td>Kota Tasikmalaya</td><td>IB</td><td>690541292</td><td>352231542</td><td>338309750</td><td>451846</td><td>337857904</td></tr>
+                <tr><td>Kota Banjar</td><td>IBS</td><td>616027796</td><td>438655989</td><td>177371807</td><td>26094177</td><td>151277630</td></tr>
+
+                <tr><td>Kota Banjar</td><td>IB</td><td>578593769</td><td>414628871</td><td>163964898</td><td>24961627</td><td>139003271</td></tr>
+            </tbody>
+            <tfoot>
+                 <tr class="table-primary"><td>Jawa Barat</td><td>IBS</td><td>2010401338411</td><td>1048762806704</td><td>961638531706</td><td>7238437064</td><td>954400094642</td></tr>
+                 <tr class="table-primary"><td>Jawa Barat</td><td>IB</td><td>1686738312381</td><td>873099412305</td><td>813638900076</td><td>5852122295</td><td>807786777781</td></tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <!-- JavaScript untuk JQuery, Bootstrap, dan DataTables beserta ekstensinya -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap5.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.2/js/dataTables.buttons.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.bootstrap5.js"></script>
+    <script src="https://cdn.datatables.net/responsive/3.0.2/js/dataTables.responsive.js"></script>
+    <script src="https://cdn.datatables.net/responsive/3.0.2/js/responsive.bootstrap5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.print.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        $('#valueAddedKotaTable').DataTable({
+            responsive: true,
+            
+            // Tata letak elemen kontrol dengan latar belakang abu-abu muda
+            dom:
+                "<'row bg-light pt-3 pb-2 rounded-top'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+                "<'row bg-light pb-3'<'col-sm-12 text-center'B>>" +
+                "<'row'<'col-sm-12'tr>>" +
+                "<'row bg-light p-2 rounded-bottom'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+
+            // Konfigurasi tombol ekspor
+            buttons: [
+                { extend: 'copy', text: 'Salin', className: 'btn btn-secondary' },
+                { extend: 'csv', text: 'CSV', className: 'btn btn-secondary' },
+                { extend: 'excel', text: 'Excel', className: 'btn btn-success' },
+                { 
+                    extend: 'pdf', 
+                    text: 'PDF', 
+                    className: 'btn btn-danger',
+                    orientation: 'landscape',
+                    pageSize: 'LEGAL'
+                },
+                { 
+                    extend: 'print', 
+                    text: 'Cetak', 
+                    className: 'btn btn-info'
+                }
+            ],
+
+            // Terjemahkan teks ke Bahasa Indonesia
+            language: {
+                "lengthMenu": "Tampilkan _MENU_ data",
+                "zeroRecords": "Data tidak ditemukan",
+                "info": "Menampilkan halaman _PAGE_ dari _PAGES_",
+                "infoEmpty": "Tidak ada data yang tersedia",
+                "infoFiltered": "(difilter dari _MAX_ total data)",
+                "search": "Cari:",
+                "paginate": {
+                    "first": "Pertama",
+                    "last": "Terakhir",
+                    "next": "›",
+                    "previous": "‹"
+                }
+            },
+
+            // Definisikan tipe kolom agar pengurutan angka berjalan benar
+            "columnDefs": [
+                { "className": "text-end", "targets": [2, 3, 4, 5, 6] }
+            ]
+        });
+    });
+    </script>
+
+</body>
+</html>
