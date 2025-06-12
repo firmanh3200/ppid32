@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Tenaga Listrik Menurut Kode Industri</title>
+    
+    <!-- CSS DataTables & Ekstensi -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+
+    <!-- Style tambahan -->
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            padding: 15px;
+            background-color: #f4f4f9;
+            font-size: 14px;
+        }
+        .container {
+            width: 100%;
+            max-width: 95%; /* Dibuat lebih lebar untuk tabel ini */
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow-x: hidden;
+        }
+        h1, h2 { text-align: center; color: #333; margin: 0; }
+        h1 { font-size: 1.4em; }
+        h2 { font-size: 1.1em; font-style: italic; font-weight: normal; color: #666; margin-bottom: 25px; }
+        
+        table.dataTable thead th {
+            text-align: center;
+            vertical-align: middle;
+            background-color: #e9ecef;
+        }
+        table.dataTable tfoot th {
+            text-align: right;
+            font-weight: bold;
+            background-color: #f8f9fa;
+        }
+        .dt-buttons .btn-secondary {
+            background-color: #007bff; color: white; border-radius: 4px; margin: 0 2px;
+        }
+        .dt-buttons .btn-secondary:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Tabel 5.1 Tenaga Listrik yang Dibangkitkan, yang Dibeli, dan Dijual menurut Kode Industri, 2022</h1>
+    <h2>Table 5.1 Electricity Generated, Purchased and Sold by Industrial Code, 2022</h2>
+    
+    <table id="tabel-listrik" class="display responsive nowrap" style="width:100%">
+        <thead>
+            <tr>
+                <th rowspan="2" data-priority="1">Kode Industri</th>
+                <th rowspan="2" data-priority="2">Skala Industri</th>
+                <th rowspan="2">Dibangkitkan (KWH)</th>
+                <th colspan="2">Tenaga Listrik yang Dibeli</th>
+                <th colspan="2">Tenaga Listrik yang Dijual</th>
+            </tr>
+            <tr>
+                <th data-priority="3">Banyaknya (KWH)</th>
+                <th data-priority="4">Nilai (000 Rp)</th>
+                <th>Banyaknya (KWH)</th>
+                <th>Nilai (000 Rp)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>10</td><td>IBS</td><td>8538254</td><td>553815763</td><td>791317082</td><td>574604</td><td>31367</td></tr>
+            <tr><td>10</td><td>IB</td><td>9363019</td><td>650167213</td><td>913585530</td><td>574754</td><td>31607</td></tr>
+            <tr><td>11</td><td>IBS</td><td>1122701</td><td>283500411</td><td>406450386</td><td>0</td><td>0</td></tr>
+            <tr><td>11</td><td>IB</td><td>1212916</td><td>313993505</td><td>448900288</td><td>0</td><td>0</td></tr>
+            <tr><td>12</td><td>IBS</td><td>0</td><td>157519241</td><td>245642448</td><td>0</td><td>0</td></tr>
+            <tr><td>12</td><td>IB</td><td>0</td><td>157613334</td><td>245756423</td><td>0</td><td>0</td></tr>
+            <tr><td>13</td><td>IBS</td><td>155508435</td><td>3345513058</td><td>3845985524</td><td>0</td><td>0</td></tr>
+            <tr><td>13</td><td>IB</td><td>155563161</td><td>3457089995</td><td>3991517798</td><td>0</td><td>0</td></tr>
+            <tr><td>14</td><td>IBS</td><td>328389540</td><td>1753035760</td><td>2046660325</td><td>0</td><td>0</td></tr>
+            <tr><td>14</td><td>IB</td><td>328456056</td><td>1785806162</td><td>2086359058</td><td>0</td><td>0</td></tr>
+            <tr><td>15</td><td>IBS</td><td>837465</td><td>274221888</td><td>330251176</td><td>1230687</td><td>1481876</td></tr>
+            <tr><td>15</td><td>IB</td><td>839253</td><td>288015881</td><td>347248417</td><td>1230687</td><td>1481876</td></tr>
+            <tr><td>16</td><td>IBS</td><td>1486379</td><td>29343839</td><td>36682289</td><td>0</td><td>0</td></tr>
+            <tr><td>16</td><td>IB</td><td>1738228</td><td>46450904</td><td>62530445</td><td>205</td><td>329</td></tr>
+            <tr><td>17</td><td>IBS</td><td>61933672</td><td>1046630600</td><td>1342450274</td><td>2150921</td><td>3441473</td></tr>
+            <tr><td>17</td><td>IB</td><td>62006631</td><td>1125369333</td><td>1439902111</td><td>2519887</td><td>4031817</td></tr>
+            <tr><td>18</td><td>IBS</td><td>15364</td><td>64923550</td><td>94006904</td><td>0</td><td>0</td></tr>
+            <tr><td>18</td><td>IB</td><td>34063</td><td>123374615</td><td>187643451</td><td>0</td><td>0</td></tr>
+            <tr><td>19</td><td>IBS</td><td>348121</td><td>28119003</td><td>29156220</td><td>0</td><td>0</td></tr>
+            <tr><td>19</td><td>IB</td><td>352625</td><td>35232539</td><td>39211073</td><td>0</td><td>0</td></tr>
+            <tr><td>20</td><td>IBS</td><td>5672624</td><td>680548574</td><td>1063792224</td><td>8041</td><td>12865</td></tr>
+            <tr><td>20</td><td>IB</td><td>6212948</td><td>1578516096</td><td>2198959880</td><td>12810</td><td>20500</td></tr>
+            <tr><td>21</td><td>IBS</td><td>3233833</td><td>218019039</td><td>257689765</td><td>459560</td><td>735284</td></tr>
+            <tr><td>21</td><td>IB</td><td>3412682</td><td>262101911</td><td>323272363</td><td>597495</td><td>955984</td></tr>
+            <tr><td>22</td><td>IBS</td><td>620232</td><td>996992721</td><td>1270538887</td><td>5153</td><td>8214</td></tr>
+            <tr><td>22</td><td>IB</td><td>1226439164</td><td>1224985194</td><td>1595117211</td><td>6799</td><td>10845</td></tr>
+            <tr><td>23</td><td>IBS</td><td>2948301</td><td>2161113461</td><td>2403805271</td><td>0</td><td>0</td></tr>
+            <tr><td>23</td><td>IB</td><td>3397078</td><td>2342420003</td><td>2642234967</td><td>0</td><td>0</td></tr>
+            <tr><td>24</td><td>IBS</td><td>1493243</td><td>285495802</td><td>429549245</td><td>0</td><td>0</td></tr>
+            <tr><td>24</td><td>IB</td><td>2431752</td><td>312063367</td><td>465119013</td><td>0</td><td>0</td></tr>
+            <tr><td>25</td><td>IBS</td><td>4233039</td><td>406717187</td><td>615550603</td><td>7952807</td><td>0</td></tr>
+            <tr><td>25</td><td>IB</td><td>4263658</td><td>497564930</td><td>735613062</td><td>7952807</td><td>0</td></tr>
+            <tr><td>26</td><td>IBS</td><td>184026</td><td>739955129</td><td>1049558533</td><td>0</td><td>0</td></tr>
+            <tr><td>26</td><td>IB</td><td>189901</td><td>763770714</td><td>1105360341</td><td>0</td><td>0</td></tr>
+            <tr><td>27</td><td>IBS</td><td>257809</td><td>394483214</td><td>563886227</td><td>522403</td><td>835845</td></tr>
+            <tr><td>27</td><td>IB</td><td>265103</td><td>608595494</td><td>802244764</td><td>522403</td><td>835845</td></tr>
+            <tr><td>28</td><td>IBS</td><td>3328242</td><td>125506718</td><td>197021479</td><td>0</td><td>0</td></tr>
+            <tr><td>28</td><td>IB</td><td>5222818</td><td>367805881</td><td>569062966</td><td>0</td><td>0</td></tr>
+            <tr><td>29</td><td>IBS</td><td>4208347</td><td>926045686</td><td>1045576663</td><td>0</td><td>0</td></tr>
+            <tr><td>29</td><td>IB</td><td>4282036</td><td>1022940828</td><td>1163657559</td><td>0</td><td>0</td></tr>
+            <tr><td>30</td><td>IBS</td><td>251417</td><td>478430325</td><td>589742694</td><td>0</td><td>0</td></tr>
+            <tr><td>30</td><td>IB</td><td>262853</td><td>896361546</td><td>913809905</td><td>0</td><td>0</td></tr>
+            <tr><td>31</td><td>IBS</td><td>30536</td><td>213732738</td><td>252223029</td><td>275</td><td>438</td></tr>
+            <tr><td>31</td><td>IB</td><td>50536</td><td>241444795</td><td>289965125</td><td>410</td><td>654</td></tr>
+            <tr><td>32</td><td>IBS</td><td>319997</td><td>139897930</td><td>212332994</td><td>0</td><td>0</td></tr>
+            <tr><td>32</td><td>IB</td><td>320908</td><td>156523694</td><td>230220013</td><td>0</td><td>0</td></tr>
+            <tr><td>33</td><td>IBS</td><td>76902</td><td>5747915</td><td>8810178</td><td>0</td><td>0</td></tr>
+            <tr><td>33</td><td>IB</td><td>224371</td><td>190363670</td><td>285988465</td><td>0</td><td>0</td></tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="2">JAWA BARAT (IBS)</th>
+                <th>585038479</th><th>15309309552</th><th>19128680420</th><th>12904451</th><th>6547362</th>
+            </tr>
+            <tr>
+                <th colspan="2">JAWA BARAT (IB)</th>
+                <th>1816541760</th><th>18448571604</th><th>23083280228</th><th>13418257</th><th>7369457</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<!-- Pustaka JavaScript yang Diperlukan -->
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+
+<!-- Skrip untuk inisialisasi DataTable -->
+<script>
+$(document).ready(function() {
+    $('#tabel-listrik').DataTable( {
+        responsive: true,
+        dom: 'lBfrtip',
+        buttons: [
+            { extend: 'copy', text: 'Salin' },
+            { extend: 'csv', text: 'CSV' },
+            { extend: 'excel', text: 'Excel', title: 'Data Tenaga Listrik per Industri 2022' },
+            { 
+              extend: 'pdf', 
+              text: 'PDF', 
+              title: 'Data Tenaga Listrik per Industri 2022',
+              orientation: 'landscape',
+              pageSize: 'A4'
+            },
+            { 
+              extend: 'print', 
+              text: 'Cetak', 
+              title: 'Data Tenaga Listrik per Industri 2022'
+            }
+        ],
+        language: { "url": "https://cdn.datatables.net/plug-ins/1.13.7/i18n/id.json" }
+    });
+});
+</script>
+
+</body>
+</html>
