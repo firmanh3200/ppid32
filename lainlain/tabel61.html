@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pemakaian Bahan Bakar Menurut Kode Industri</title>
+    
+    <!-- CSS DataTables & Ekstensi -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+
+    <!-- Style tambahan -->
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            padding: 15px;
+            background-color: #f4f4f9;
+            font-size: 13px; /* Ukuran font lebih kecil karena tabel padat */
+        }
+        .container {
+            width: 100%;
+            max-width: 95%; /* Dibuat lebih lebar untuk menampung tabel */
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow-x: hidden;
+        }
+        h1, h2 { text-align: center; color: #333; margin: 0; }
+        h1 { font-size: 1.4em; }
+        h2 { font-size: 1.1em; font-style: italic; font-weight: normal; color: #666; margin-bottom: 25px; }
+        
+        table.dataTable thead th {
+            text-align: center;
+            vertical-align: middle;
+            background-color: #e9ecef;
+            white-space: normal; /* Izinkan text wrap di header */
+        }
+        table.dataTable tfoot th {
+            text-align: right;
+            font-weight: bold;
+            background-color: #f8f9fa;
+        }
+        .dt-buttons .btn-secondary {
+            background-color: #007bff; color: white; border-radius: 4px; margin: 0 2px;
+        }
+        .dt-buttons .btn-secondary:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Tabel 6.1 Banyaknya Pemakaian Bahan Bakar dan Pelumas menurut Kode Industri, 2022</h1>
+    <h2><i>Table 6.1 The Number of Fuel and Lubricant Used by Industrial Code, 2022</i></h2>
+    
+    <table id="tabel-bahan-bakar" class="display responsive nowrap" style="width:100%">
+        <thead>
+            <tr>
+                <th data-priority="1">Kode Industri</th>
+                <th data-priority="2">Skala Industri</th>
+                <th data-priority="3">Bensin</th>
+                <th data-priority="4">Minyak Solar, dll</th>
+                <th>Minyak Diesel</th>
+                <th>Bio Solar/Diesel</th>
+                <th>Batubara</th>
+                <th>Kokas</th>
+                <th>Briket Batubara</th>
+                <th>Gas Alam</th>
+                <th>Minyak Bakar</th>
+                <th>LPG</th>
+                <th>Biomassa</th>
+                <th>Pelumas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data di sini, "–" diganti dengan 0 -->
+            <tr><td>10a</td><td>IBS</td><td>12311950</td><td>29366358</td><td>299642</td><td>3440925</td><td>67192</td><td>0</td><td>396979</td><td>2632367</td><td>211183</td><td>6776335</td><td>4425953</td><td>1782272</td></tr>
+            <tr><td>10a</td><td>IB</td><td>10270942</td><td>21261318</td><td>141085</td><td>2019055</td><td>60286</td><td>0</td><td>361519</td><td>2388707</td><td>164038</td><td>3119897</td><td>4403617</td><td>1520040</td></tr>
+            <tr><td>11a</td><td>IBS</td><td>537854</td><td>5549461</td><td>119743</td><td>639736</td><td>5736</td><td>0</td><td>0</td><td>156788</td><td>12375</td><td>325915</td><td>53823</td><td>70638</td></tr>
+            <tr><td>11a</td><td>IB</td><td>394765</td><td>4909108</td><td>87976</td><td>275303</td><td>4777</td><td>0</td><td>0</td><td>149374</td><td>11823</td><td>240408</td><td>45923</td><td>63898</td></tr>
+            <tr><td>12a</td><td>IBS</td><td>34061</td><td>3440</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>11123</td><td>0</td><td>302</td></tr>
+            <tr><td>12a</td><td>IB</td><td>1157</td><td>1645</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>7759</td><td>0</td><td>168</td></tr>
+            <tr><td>13a</td><td>IBS</td><td>49087818</td><td>24834135</td><td>7008880</td><td>2312198</td><td>1709914</td><td>0</td><td>9597221</td><td>1223846</td><td>149615</td><td>3748731</td><td>833444</td><td>2700917</td></tr>
+            <tr><td>13a</td><td>IB</td><td>48530980</td><td>24015664</td><td>6832613</td><td>2085393</td><td>1674863</td><td>0</td><td>9117245</td><td>1152540</td><td>147523</td><td>3354640</td><td>813703</td><td>2573235</td></tr>
+            <tr><td>14a</td><td>IBS</td><td>30595957</td><td>5691057</td><td>1429310</td><td>756828</td><td>383178</td><td>959</td><td>210132</td><td>66383</td><td>2601</td><td>1011303</td><td>18921</td><td>457839</td></tr>
+            <tr><td>14a</td><td>IB</td><td>29980564</td><td>5510199</td><td>1402999</td><td>696293</td><td>380486</td><td>959</td><td>193002</td><td>65424</td><td>2427</td><td>890813</td><td>18820</td><td>434441</td></tr>
+            <tr><td>15a</td><td>IBS</td><td>880709</td><td>455205</td><td>22570</td><td>125828</td><td>440</td><td>0</td><td>0</td><td>59261</td><td>4871</td><td>51957</td><td>405</td><td>31558</td></tr>
+            <tr><td>15a</td><td>IB</td><td>780361</td><td>319260</td><td>7980</td><td>114012</td><td>431</td><td>0</td><td>0</td><td>57558</td><td>4282</td><td>31923</td><td>331</td><td>27667</td></tr>
+            <tr><td>16a</td><td>IBS</td><td>370308</td><td>1675924</td><td>13634</td><td>119295</td><td>837</td><td>0</td><td>130396</td><td>11467</td><td>642</td><td>149196</td><td>546</td><td>13741</td></tr>
+            <tr><td>16a</td><td>IB</td><td>189992</td><td>1431864</td><td>851</td><td>75394</td><td>434</td><td>0</td><td>0</td><td>6693</td><td>432</td><td>53815</td><td>195</td><td>6714</td></tr>
+            <tr><td>17a</td><td>IBS</td><td>620054</td><td>2044273</td><td>905537</td><td>1574980</td><td>429275</td><td>0</td><td>235538</td><td>6507197</td><td>2478</td><td>137917</td><td>8701</td><td>346776</td></tr>
+            <tr><td>17a</td><td>IB</td><td>371725</td><td>1600685</td><td>885515</td><td>1412657</td><td>421938</td><td>0</td><td>212898</td><td>6356738</td><td>2218</td><td>34733</td><td>7254</td><td>336437</td></tr>
+            <tr><td>18a</td><td>IBS</td><td>813918</td><td>401279</td><td>6178</td><td>56315</td><td>0</td><td>0</td><td>0</td><td>900</td><td>1404</td><td>66238</td><td>0</td><td>28172</td></tr>
+            <tr><td>18a</td><td>IB</td><td>393646</td><td>142273</td><td>38</td><td>1048</td><td>0</td><td>0</td><td>0</td><td>384</td><td>30</td><td>3916</td><td>0</td><td>8845</td></tr>
+            <tr><td>19a</td><td>IBS</td><td>154394</td><td>667873</td><td>426</td><td>2021741</td><td>0</td><td>0</td><td>0</td><td>225906</td><td>1973</td><td>138</td><td>0</td><td>48161</td></tr>
+            <tr><td>19a</td><td>IB</td><td>151451</td><td>250957</td><td>170</td><td>17154</td><td>0</td><td>0</td><td>0</td><td>148744</td><td>758</td><td>79</td><td>0</td><td>38976</td></tr>
+            <tr><td>20a</td><td>IBS</td><td>2296566</td><td>7876807</td><td>287674</td><td>1931981</td><td>310713</td><td>93</td><td>436975</td><td>4695952</td><td>305381</td><td>4402306</td><td>138386</td><td>878198</td></tr>
+            <tr><td>20a</td><td>IB</td><td>1467231</td><td>6409313</td><td>184764</td><td>1390187</td><td>271100</td><td>93</td><td>316935</td><td>3850550</td><td>254125</td><td>4011552</td><td>27378</td><td>745158</td></tr>
+            <tr><td>21a</td><td>IBS</td><td>1597228</td><td>10543777</td><td>99511</td><td>14637926</td><td>4067</td><td>0</td><td>1100</td><td>247768</td><td>117647</td><td>744993</td><td>76485</td><td>47585</td></tr>
+            <tr><td>21a</td><td>IB</td><td>1473238</td><td>9603872</td><td>97734</td><td>14621327</td><td>1119</td><td>0</td><td>23</td><td>148651</td><td>92073</td><td>578933</td><td>5640</td><td>44968</td></tr>
+            <tr><td>22a</td><td>IBS</td><td>20460625</td><td>7554807</td><td>103304</td><td>2979532</td><td>582332</td><td>0</td><td>16497</td><td>1948069</td><td>23617</td><td>1593372</td><td>59246</td><td>392370</td></tr>
+            <tr><td>22a</td><td>IB</td><td>19191831</td><td>5666286</td><td>97272</td><td>2379083</td><td>8685</td><td>0</td><td>12380</td><td>1869357</td><td>11135</td><td>1424231</td><td>54370</td><td>344134</td></tr>
+            <tr><td>23a</td><td>IBS</td><td>46399810</td><td>32262264</td><td>14690270</td><td>9068740</td><td>2607393</td><td>0</td><td>258853</td><td>11463149</td><td>339819</td><td>829831</td><td>26102478</td><td>393947</td></tr>
+
+            <tr><td>23a</td><td>IB</td><td>45843249</td><td>22602004</td><td>13492313</td><td>7064469</td><td>2522946</td><td>0</td><td>243678</td><td>9583858</td><td>283178</td><td>577415</td><td>748837</td><td>259754</td></tr>
+            <tr><td>24a</td><td>IBS</td><td>371154</td><td>2660610</td><td>57772</td><td>1475304</td><td>2729</td><td>0</td><td>1345</td><td>1645746</td><td>296173</td><td>77096</td><td>1577</td><td>56122</td></tr>
+            <tr><td>24a</td><td>IB</td><td>264567</td><td>2225909</td><td>56046</td><td>1275836</td><td>354</td><td>0</td><td>817</td><td>1292743</td><td>1720</td><td>50633</td><td>1308</td><td>44692</td></tr>
+            <tr><td>25a</td><td>IBS</td><td>8777869</td><td>3322086</td><td>115954</td><td>665162</td><td>1380</td><td>0</td><td>32006</td><td>1266223</td><td>25644</td><td>3677487</td><td>630</td><td>151482</td></tr>
+            <tr><td>25a</td><td>IB</td><td>642736</td><td>1299565</td><td>60410</td><td>420379</td><td>155</td><td>0</td><td>24723</td><td>1136824</td><td>23151</td><td>1405305</td><td>45</td><td>50805</td></tr>
+            <tr><td>26a</td><td>IBS</td><td>9699915</td><td>5748232</td><td>85692</td><td>64510</td><td>0</td><td>0</td><td>0</td><td>89486</td><td>4570</td><td>149723</td><td>19</td><td>65829</td></tr>
+            <tr><td>26a</td><td>IB</td><td>9619953</td><td>5693061</td><td>74772</td><td>64144</td><td>0</td><td>0</td><td>0</td><td>84530</td><td>4570</td><td>48347</td><td>19</td><td>57272</td></tr>
+            <tr><td>27a</td><td>IBS</td><td>6009499</td><td>2937164</td><td>1086008</td><td>1066916</td><td>367</td><td>0</td><td>6244</td><td>1167917</td><td>0</td><td>882270</td><td>192618</td><td>573034</td></tr>
+            <tr><td>27a</td><td>IB</td><td>2456479</td><td>2378452</td><td>914439</td><td>710370</td><td>352</td><td>0</td><td>6244</td><td>1039951</td><td>0</td><td>270090</td><td>182179</td><td>548159</td></tr>
+            <tr><td>28a</td><td>IBS</td><td>37439891</td><td>5231105</td><td>185652</td><td>519452</td><td>0</td><td>0</td><td>0</td><td>239877</td><td>0</td><td>1090907</td><td>1049</td><td>243299</td></tr>
+            <tr><td>28a</td><td>IB</td><td>36538981</td><td>2449000</td><td>43204</td><td>337740</td><td>0</td><td>0</td><td>0</td><td>160623</td><td>0</td><td>738410</td><td>0</td><td>98975</td></tr>
+            <tr><td>29a</td><td>IBS</td><td>12130478</td><td>39656547</td><td>226355</td><td>731783</td><td>0</td><td>0</td><td>665631</td><td>2432315</td><td>13674</td><td>7524381</td><td>146</td><td>543096</td></tr>
+            <tr><td>29a</td><td>IB</td><td>8281320</td><td>37670377</td><td>223935</td><td>705805</td><td>0</td><td>0</td><td>658227</td><td>2243822</td><td>8773</td><td>7056503</td><td>143</td><td>368682</td></tr>
+            <tr><td>30a</td><td>IBS</td><td>8243047</td><td>3169988</td><td>93708</td><td>593343</td><td>0</td><td>0</td><td>0</td><td>178167</td><td>118928</td><td>1179680</td><td>1096</td><td>347417</td></tr>
+            <tr><td>30a</td><td>IB</td><td>4758656</td><td>2991634</td><td>65953</td><td>356370</td><td>0</td><td>0</td><td>0</td><td>172123</td><td>46344</td><td>1122417</td><td>136</td><td>314689</td></tr>
+            <tr><td>31a</td><td>IBS</td><td>553597</td><td>1489915</td><td>12309</td><td>228310</td><td>0</td><td>0</td><td>108</td><td>22627</td><td>90</td><td>849226</td><td>108</td><td>15607</td></tr>
+            <tr><td>31a</td><td>IB</td><td>206267</td><td>1225323</td><td>4088</td><td>170848</td><td>0</td><td>0</td><td>101</td><td>22486</td><td>36</td><td>715104</td><td>77</td><td>7236</td></tr>
+            <tr><td>32a</td><td>IBS</td><td>498925</td><td>1695895</td><td>9025</td><td>22825</td><td>1325</td><td>0</td><td>0</td><td>63727</td><td>0</td><td>631446</td><td>728</td><td>23859</td></tr>
+            <tr><td>32a</td><td>IB</td><td>229266</td><td>1550962</td><td>7738</td><td>11763</td><td>1317</td><td>0</td><td>0</td><td>63169</td><td>0</td><td>572565</td><td>697</td><td>16871</td></tr>
+            <tr><td>33a</td><td>IBS</td><td>1905697</td><td>3812774</td><td>43</td><td>100678</td><td>0</td><td>0</td><td>0</td><td>1500</td><td>0</td><td>1966131</td><td>0</td><td>362603</td></tr>
+            <tr><td>33a</td><td>IB</td><td>50221</td><td>470506</td><td>0</td><td>19136</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>31848</td><td>0</td><td>44840</td></tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="2">Jawa Barat (IBS)</th>
+                <th>251791324</th>
+                <th>198650976</th>
+                <th>26859197</th>
+                <th>45134308</th>
+                <th>6106878</th>
+                <th>1052</th>
+                <th>11989025</th>
+                <th>36346638</th>
+                <th>1632685</th>
+                <th>37877702</th>
+                <th>31916359</th>
+                <th>9574824</th>
+            </tr>
+            <tr>
+                <th colspan="2">Jawa Barat (IB)</th>
+                <th>222089578</th><th>161679237</th><th>24681895</th><th>36223766</th><th>5349243</th><th>1052</th><th>11147792</th><th>31994849</th><th>1058636</th><th>26341336</th><th>6310672</th><th>7956656</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<!-- Pustaka JavaScript yang Diperlukan -->
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+
+<!-- Skrip untuk inisialisasi DataTable -->
+<script>
+$(document).ready(function() {
+    $('#tabel-bahan-bakar').DataTable( {
+        responsive: true,
+        dom: 'lBfrtip',
+        buttons: [
+            { extend: 'copy', text: 'Salin' },
+            { extend: 'csv', text: 'CSV' },
+            { extend: 'excel', text: 'Excel', title: 'Data Pemakaian Bahan Bakar per Industri 2022' },
+            { 
+              extend: 'pdf', 
+              text: 'PDF', 
+              title: 'Data Pemakaian Bahan Bakar per Industri 2022',
+              orientation: 'landscape',
+              pageSize: 'LEGAL'
+            },
+            { 
+              extend: 'print', 
+              text: 'Cetak', 
+              title: 'Data Pemakaian Bahan Bakar per Industri 2022'
+            }
+        ],
+        language: { "url": "https://cdn.datatables.net/plug-ins/1.13.7/i18n/id.json" }
+    });
+});
+</script>
+
+</body>
+</html>
