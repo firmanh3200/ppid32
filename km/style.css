@@ -1,0 +1,214 @@
+:root {
+    --primary-orange: #FF8C00; /* DarkOrange */
+    --light-orange: #FFDAB9; /* PeachPuff */
+    --dark-orange: #CD6600; /* OrangeRed derivative */
+    --text-dark: #333;
+    --text-light: #f5f5f5;
+    --bg-light: #FFF0E0; /* Very light orange/cream */
+    --border-color: #FFC04D;
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.main-header {
+    background-color: var(--primary-orange);
+    color: var(--text-light);
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px var(--box-shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+
+.main-header h2 {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* FAQ Section */
+.faq-section {
+    flex: 1;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/* NEW: Style untuk judul kategori */
+.faq-category-title {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark-orange);
+    font-size: 1.8em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    
+}
+
+#faq-list > .faq-category-title:first-of-type {
+    margin-top: 0; /* Hapus margin atas untuk judul pertama */
+}
+
+/* Container utama untuk daftar FAQ */
+#faq-list {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--box-shadow-color);
+    padding: 25px; /* Tambahkan padding agar konten tidak menempel di tepi */
+}
+
+.faq-item {
+    border-bottom: 5px solid var(--border-color);
+    overflow: hidden; /* Tambahkan untuk border-radius yang lebih baik */
+}
+
+#faq-list > .faq-item:last-of-type {
+    border-bottom: none;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0; /* Padding vertikal, hapus padding horizontal */
+    font-size: 1.15em;
+    font-weight: 600;
+    color: var(--text-dark);
+    cursor: pointer;
+    background-color: transparent; /* Hapus warna latar belakang */
+    transition: color 0.3s ease;
+    user-select: none;
+}
+
+.faq-question:hover {
+    color: var(--primary-orange);
+}
+
+.faq-question.active {
+    color: var(--primary-orange);
+}
+
+.faq-question .icon {
+    font-size: 1.5em;
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+    color: var(--text-dark);
+}
+
+.faq-question.active .icon {
+    transform: rotate(180deg);
+    color: var(--primary-orange);
+}
+
+.faq-answer {
+    padding: 0; /* Padding diatur saat kelas 'open' aktif */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    background-color: #fff;
+    color: var(--text-dark);
+}
+
+.faq-answer.open {
+    max-height: 500px;
+    padding: 0 0 20px 0; /* Padding bawah saat terbuka */
+}
+
+.faq-answer p {
+    font-size: 1em;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.faq-answer p:last-child {
+    margin-bottom: 0;
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--dark-orange);
+    color: var(--text-light);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+    box-shadow: 0 -2px 5px var(--box-shadow-color);
+    margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-header h1 {
+        font-size: 2.2em;
+    }
+    .main-header p {
+        font-size: 1em;
+    }
+    .faq-category-title {
+        font-size: 1.6em;
+    }
+    #faq-list {
+        padding: 20px;
+    }
+    .faq-question {
+        font-size: 1em;
+        padding: 18px 0;
+    }
+    .faq-answer.open {
+        padding: 0 0 15px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header h1 {
+        font-size: 1.8em;
+    }
+    .main-header p {
+        font-size: 0.9em;
+    }
+    .faq-section {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+     #faq-list {
+        padding: 15px;
+    }
+    .faq-category-title {
+        font-size: 1.4em;
+    }
+    .faq-question {
+        font-size: 0.9em;
+        padding: 15px 0;
+    }
+    .faq-question .icon {
+        font-size: 1.2em;
+        margin-left: 10px;
+    }
+}

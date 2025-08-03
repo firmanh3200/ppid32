@@ -1,0 +1,270 @@
+:root {
+    --primary-orange: #FF8C00; /* DarkOrange */
+    --light-orange: #FFDAB9; /* PeachPuff */
+    --dark-orange: #CD6600; /* OrangeRed derivative */
+    --text-dark: #333;
+    --text-light: #f5f5f5;
+    --bg-light: #FFF0E0; /* Very light orange/cream */
+    --border-color: #FFC04D;
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.main-header {
+    background-color: var(--primary-orange);
+    color: var(--text-light);
+    padding: 30px 0; /* Keep original padding, tabs will add to height */
+    text-align: center;
+    box-shadow: 0 2px 5px var(--box-shadow-color);
+    position: sticky; /* Make the header sticky */
+    top: 0; /* Stick to the top of the viewport */
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+.main-header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+
+.main-header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* FAQ Section */
+.faq-section {
+    flex: 1;
+    padding-top: 50px; /* Adjusted padding-top to account for the taller sticky header */
+    padding-bottom: 40px; /* Keep original bottom padding */
+}
+
+.faq-section h2 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: var(--dark-orange);
+    margin-bottom: 30px;
+    font-size: 2.2em;
+}
+
+/* Tab Navigation */
+.tab-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow tabs to wrap on smaller screens */
+    margin-top: 20px; /* Space between header text and tabs */
+    margin-bottom: 0; /* Remove old margin as it's now inside the sticky header */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--box-shadow-color);
+    overflow: hidden; /* For rounded corners */
+}
+
+.tab-button {
+    flex: 1 1 auto; /* Allow buttons to grow and shrink */
+    min-width: 120px; /* Minimum width for each button */
+    padding: 15px 20px;
+    border: none;
+    background-color: var(--light-orange);
+    color: var(--text-dark);
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-right: 1px solid var(--border-color); /* Separator between buttons */
+    border-bottom: 2px solid transparent; /* For active indicator */
+}
+
+.tab-button:last-child {
+    border-right: none;
+}
+
+.tab-button:hover:not(.active) {
+    background-color: #FFC973; /* Slightly darker light orange */
+}
+
+.tab-button.active {
+    background-color: var(--primary-orange);
+    color: var(--text-light);
+    border-bottom: 2px solid var(--dark-orange); /* Stronger active indicator */
+    box-shadow: inset 0 -3px 0 0 var(--dark-orange);
+}
+
+#faq-list {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--box-shadow-color);
+    overflow: hidden; /* Ensures border-radius is applied to children */
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    font-size: 1.15em;
+    font-weight: 600;
+    color: var(--text-dark);
+    cursor: pointer;
+    background-color: var(--light-orange);
+    transition: background-color 0.3s ease;
+    user-select: none;
+}
+
+.faq-question:hover {
+    background-color: #FFC973; /* Slightly darker light orange */
+}
+
+.faq-question.active {
+    background-color: var(--primary-orange);
+    color: var(--text-light);
+}
+
+.faq-question .icon {
+    font-size: 1.5em;
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+    color: var(--text-dark); /* Default color for icon */
+}
+
+.faq-question.active .icon {
+    transform: rotate(180deg);
+    color: var(--text-light); /* Icon color when active */
+}
+
+.faq-answer {
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    background-color: #fff;
+    color: var(--text-dark);
+}
+
+.faq-answer.open {
+    max-height: 500px; /* A sufficiently large value for expansion */
+    padding: 20px 25px;
+}
+
+.faq-answer p {
+    font-size: 1em;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.faq-answer p:last-child {
+    margin-bottom: 0;
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--dark-orange);
+    color: var(--text-light);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+    box-shadow: 0 -2px 5px var(--box-shadow-color);
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-header h1 {
+        font-size: 2.2em;
+    }
+    .main-header p {
+        font-size: 1em;
+    }
+    .faq-section {
+        padding-top: 35px; /* Adjusted padding-top for smaller screens */
+    }
+    .faq-section h2 {
+        font-size: 1.8em;
+    }
+    .tab-nav {
+        flex-direction: column; /* Stack tabs vertically on small screens */
+        border-radius: 8px; /* Ensure border radius applies to the entire stacked block */
+        margin-top: 15px; /* Slightly less margin on mobile */
+    }
+    .tab-button {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color); /* Add bottom border for vertical stacking */
+        width: 100%; /* Full width for stacked buttons */
+        padding: 12px 15px;
+        font-size: 1em;
+    }
+    .tab-button:last-child {
+        border-bottom: none;
+    }
+    .faq-question {
+        font-size: 1em;
+        padding: 18px 20px;
+    }
+    .faq-answer {
+        padding: 0 20px;
+    }
+    .faq-answer.open {
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header h1 {
+        font-size: 1.8em;
+    }
+    .main-header p {
+        font-size: 0.9em;
+    }
+    .faq-section {
+        padding-top: 150px; /* Further adjusted padding-top for very small screens */
+    }
+    .faq-section h2 {
+        font-size: 1.6em;
+    }
+    .tab-button {
+        font-size: 0.9em;
+        padding: 10px 15px;
+    }
+    .faq-question {
+        font-size: 0.9em;
+        padding: 15px;
+    }
+    .faq-question .icon {
+        font-size: 1.2em;
+        margin-left: 10px;
+    }
+    .faq-answer.open {
+        padding: 10px 15px;
+    }
+}

@@ -17,8 +17,7 @@ body {
   color: #333;
   transition: background 0.5s ease, color 0.5s ease;
   /* Smooth transition for theme changes */
-  min-height: 90vh;
-  /* Ensure the body takes up at least the full viewport height */
+  min-height: 100vh; /* MODIFIED: Ensure the body takes up the full viewport height */
   display: flex;
   flex-direction: column;
 }
@@ -262,8 +261,8 @@ body.blue-theme footer {
 /* Floating settings icon and menu */
 .settings-container {
   position: fixed;
-  top: 20px;
-  right: 10px;
+  bottom: 80px; /* MODIFIED: Positioned above the WhatsApp icon */
+  right: 10px;   /* MODIFIED: Aligned with WhatsApp icon */
   z-index: 1000;
 }
 
@@ -286,7 +285,7 @@ body.blue-theme footer {
 
 .settings-menu {
   position: absolute;
-  top: 50px;
+  bottom: 50px; /* MODIFIED: Position menu above the button */
   right: 0;
   background-color: #f9f9f9;
   border: 1px solid #ddd;
@@ -303,7 +302,7 @@ body.blue-theme footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  padding: 5px;
   text-decoration: none;
   color: #333;
   border: none;
@@ -424,7 +423,7 @@ body.silver-theme .card a {
 .whatsapp-chat {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: 0px;
   z-index: 1000;
 }
 
@@ -432,6 +431,5 @@ body.silver-theme .card a {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
-
