@@ -32,7 +32,7 @@ export const faqData = [
             },
             {
                 question: "Dimana saya bisa memberikan masukan atau keluhan terkait pelayanan PST?",
-                answer: "<p>Anda dapat memberikan masukan atau keluhan melalui kotak saran yang tersedia di kantor PST, email resmi BPS Provinsi Jawa Barat, telepon, Whatsapp, atau melalui kanal pengaduan online (LAPOR).</p><a href='https://webapps.bps.go.id/pengaduan/wbs/beranda' target='_blank'>Kanal Pengaduan BPS</a> | <a href='https://lapor.go.id' target='_blank'>LAPOR</a> | <a href='https://ppid.bps.go.id/app/konten/0000/Tata-Cara-Pengaduan.html' target='_blank'>Tata Cara Pengaduan</a>"
+                answer: "<p>Anda dapat memberikan masukan atau keluhan melalui kotak saran yang tersedia di PST, email resmi BPS Provinsi Jawa Barat, telepon, Whatsapp, atau melalui kanal pengaduan online (LAPOR).</p><a href='https://webapps.bps.go.id/pengaduan/wbs/beranda' target='_blank'>Kanal Pengaduan BPS</a> | <a href='https://lapor.go.id' target='_blank'>LAPOR</a> | <a href='https://ppid.bps.go.id/app/konten/0000/Tata-Cara-Pengaduan.html' target='_blank'>Tata Cara Pengaduan</a>"
             },
         ]
     },
@@ -41,7 +41,7 @@ export const faqData = [
         faqs: [
             {
                 question: "Bagaimana cara meminjam buku di perpustakaan BPS?",
-                answer: "<p>Perpustakaan BPS Provinsi Jawa Barat menyediakan koleksi publikasi statistik. Pengunjung dapat membaca di tempat atau meminjam dengan mengikuti prosedur peminjaman yang berlaku.</p>"
+                answer: "<p>Perpustakaan BPS Provinsi Jawa Barat menyediakan koleksi publikasi statistik. Pengunjung dapat membaca di tempat atau meminjam dengan mengikuti prosedur peminjaman yang berlaku.</p><a href='https://perpustakaan.bps.go.id' target='_blank'>Kunjungi Perpustakaan Online BPS</a>"
             },
             {
                 question: "Apakah koleksi perpustakaan BPS terbuka untuk umum?",
