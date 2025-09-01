@@ -433,3 +433,20 @@ body.silver-theme .card a {
   border-radius: 50%;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
+
+a {
+      color: inherit;
+      text-decoration: none;
+    }
+    a:visited {
+      color: inherit;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #007bff;
+      text-decoration: underline;
+    }
+    a:active {
+      color: inherit;
+      text-decoration: none;
+    }
